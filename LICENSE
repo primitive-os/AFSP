@@ -1,0 +1,59 @@
+AFSP Specification License
+
+Copyright 2026 CiDR Technologies, Inc. D/B/A Primitive. All rights reserved
+except as stated below.
+
+1. Definitions.
+
+   (a) "Specification" means the AFSP specification, including its schemas,
+       worked examples and example code, as published in this repository or
+       at agenticfinanceprotocol.org.
+
+   (b) "AFSP Governing Body" means Primitive, as founding author and interim
+       protocol administrator, until governance of AFSP transfers to the AFSP
+       Foundation, and the AFSP Foundation after that transfer.
+
+2. Reproduction. Anyone may read, copy, reproduce and distribute the
+   Specification, in whole or in part, without payment of royalties to
+   Primitive, provided that each copy:
+
+   (a) attributes the Specification, for example: "AFSP v0.1 Public Review
+       Draft, (c) 2026 CiDR Technologies, Inc. D/B/A Primitive";
+   (b) includes or links to this license; and
+   (c) does not alter the normative text.
+
+3. Modified versions, translations and derivative works. Changes to the
+   Specification are governed by the AFSP Governing Body. No one may publish
+   a modified version, translation or derivative work of the Specification,
+   or present one as AFSP, unless the AFSP Governing Body has authorized it
+   in writing. Proposed changes are made through the extension and comment
+   process described in CONTRIBUTING.md, and take effect only when the AFSP
+   Governing Body approves them and publishes them as part of the
+   Specification.
+
+4. Comment and review. Anyone may quote the Specification in comments,
+   reviews, implementation notes and extension proposals.
+
+5. Schemas and example code. The schemas, worked examples and example code in
+   the Specification are covered by this license. In addition, anyone may
+   copy and adapt them within their own implementation of AFSP, for
+   development, testing and prototyping. Adapted copies may not be published
+   as, or presented as, part of the Specification. This section grants
+   copyright permission only; it grants no patent rights.
+
+6. Patents. This license covers copyright in the Specification only and
+   grants no patent rights, express or implied. Patent claims essential to
+   implementing AFSP are licensed separately on fair, reasonable and
+   non-discriminatory (FRAND) terms, as described in PATENTS.md and
+   Section 17.5 of the Specification.
+
+7. Name and certification mark. This license grants no rights to the AFSP
+   name or the AFSP certification mark. AFSP certification is governed by the
+   Network Participation Agreement.
+
+8. Changes to this license. The AFSP Governing Body may publish revised
+   versions of this license. Each version of the Specification is governed by
+   the version of this license published with it.
+
+9. No warranty. The Specification is provided "as is", without warranties or
+   conditions of any kind.

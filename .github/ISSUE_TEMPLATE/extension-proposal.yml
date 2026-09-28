@@ -1,0 +1,61 @@
+name: Extension proposal
+description: Propose a Type 1, Type 2 or Type 3 extension to AFSP.
+title: "[Extension] "
+labels: ["extension-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Any organization may propose an extension. See [CONTRIBUTING.md](https://github.com/primitive-os/AFSP/blob/main/CONTRIBUTING.md) for what to include and how proposals are reviewed.
+
+        GitHub issues are public. Do not report security vulnerabilities here; see [SECURITY.md](https://github.com/primitive-os/AFSP/blob/main/SECURITY.md).
+  - type: dropdown
+    id: type
+    attributes:
+      label: Extension type
+      description: See Section 4.1 of the specification.
+      options:
+        - "Type 1: Minor (optional fields, new registered values, clarifications)"
+        - "Type 2: Major (new Signal type, component number, action class, or change to mandatory behavior)"
+        - "Type 3: Profile (named implementation profile)"
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected components, sections and registered values
+      description: Name the components, specification sections and registered values (Section 4.3) the extension affects.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: (a) Problem statement and use case
+    validations:
+      required: true
+  - type: textarea
+    id: specification
+    attributes:
+      label: (b) Proposed technical specification
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: (c) Backward compatibility analysis
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: (d) Security considerations
+      description: Security considerations specific to this extension.
+    validations:
+      required: true
+  - type: textarea
+    id: proposer
+    attributes:
+      label: (e) Proposing organization and contact
+      description: The proposing organization's identity and a contact for follow-up.
+    validations:
+      required: true
