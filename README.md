@@ -8,7 +8,7 @@ AFSP governs one question: should this AI agent session proceed to the open bank
 
 **v0.1 Public Review Draft, published September 28, 2026. Open for public comment through November 16, 2026.**
 
-- Specification: [AFSP v0.1 Public Review Draft](https://agenticfinanceprotocol.org) at agenticfinanceprotocol.org
+- Specification: [AFSP v0.1 Public Review Draft (PDF)](spec/AFSP-v0.1-Public-Review-Draft.pdf), also published at [agenticfinanceprotocol.org](https://agenticfinanceprotocol.org/spec/AFSP-v0.1-Public-Review-Draft.pdf)
 
 Version 0.1 covers the first use case: agent-assisted opening of a new deposit account.
 
@@ -42,7 +42,7 @@ AFSP does not make credit, fraud, KYC or servicing decisions. Those controls sta
 - **Comment on the specification** by November 16, 2026: open a [specification comment](https://github.com/primitive-os/AFSP/issues/new?template=spec-comment.yml) or email [afsp@primitive.com](mailto:afsp@primitive.com). GitHub issues are public; send confidential comments by email.
 - **Join the Technical Working Group.** Participation is open to all organizations with a bona fide interest in the agentic banking channel. Working groups begin in November 2026. Contact [afsp@primitive.com](mailto:afsp@primitive.com).
 - **Become a Founding Endorser.** This requires a written letter of endorsement and a commitment to participate in the Technical Working Group; no production implementation is required. Contact [afsp@primitive.com](mailto:afsp@primitive.com). Founding Endorsers will be announced ahead of the November 16, 2026 comment deadline.
-- **Prototype against it.** The specification and its worked example are public. Production implementations require AFSP certification, and patent claims essential to implementing AFSP are licensed on FRAND terms (see [License and intellectual property](#license-and-intellectual-property)).
+- **Prototype against it.** The [specification](spec/AFSP-v0.1-Public-Review-Draft.pdf) and its worked example (Appendix A) are public. Production implementations require AFSP certification, and patent claims essential to implementing AFSP are licensed on FRAND terms (see [License and intellectual property](#license-and-intellectual-property)).
 
 ## Extending AFSP
 
