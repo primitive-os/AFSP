@@ -1,0 +1,40 @@
+name: Specification comment
+description: Comment on the AFSP v0.1 Public Review Draft.
+title: "[Spec comment] "
+labels: ["spec-comment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Comments on any part of the specification are welcome through November 16, 2026.
+
+        GitHub issues are public. To keep a comment confidential, email [afsp@primitive.com](mailto:afsp@primitive.com) instead. Do not report security vulnerabilities here; see [SECURITY.md](https://github.com/primitive-os/AFSP/blob/main/SECURITY.md).
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: The section number of the specification your comment refers to.
+      placeholder: "e.g. 6.2"
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: Comment
+      description: What is unclear, incorrect or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested change
+      description: Proposed wording or approach, if you have one.
+    validations:
+      required: false
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      description: The organization you are commenting on behalf of, if any.
+    validations:
+      required: false
