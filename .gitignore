@@ -1,1 +1,21 @@
+# OS and editors
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local tooling (schema validation, previews)
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local secrets
+.env
+.env.*
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/*.lock
+.claude/worktrees/

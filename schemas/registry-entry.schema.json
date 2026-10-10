@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/registry-entry.schema.json",
+  "title": "Participation Registry entry",
+  "description": "A Participation Registry entry (§12.2): certification status, signing key, API endpoint, supported protocol versions and product categories. previous_keys (reference proposal) lists keys retired by rotation that still verify within their overlap period.",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "institution_id": {
+      "type": "string"
+    },
+    "institution_name": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "common.schema.json#/$defs/participation_status"
+    },
+    "status_change_date": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "api_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "certification": {
+      "type": "object",
+      "properties": {
+        "pathway": {
+          "enum": [
+            "STANDARD",
+            "PLATFORM_OPERATOR"
+          ]
+        },
+        "certified_date": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "kyc_rigor_status": {
+          "enum": [
+            "CURRENT",
+            "LAPSED"
+          ],
+          "description": "§17.2."
+        },
+        "next_reverification_date": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "pathway",
+        "certified_date",
+        "kyc_rigor_status",
+        "next_reverification_date"
+      ]
+    },
+    "signing_key": {
+      "type": "object",
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "public_key": {
+          "$ref": "common.schema.json#/$defs/jwk"
+        },
+        "rotation_timestamp": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "key_id",
+        "public_key",
+        "rotation_timestamp"
+      ],
+      "description": "The public key is a P-256 JWK."
+    },
+    "previous_keys": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key_id": {
+            "type": "string"
+          },
+          "public_key": {
+            "$ref": "common.schema.json#/$defs/jwk"
+          },
+          "rotation_timestamp": {
+            "$ref": "common.schema.json#/$defs/timestamp"
+          }
+        },
+        "required": [
+          "key_id",
+          "public_key",
+          "rotation_timestamp"
+        ]
+      }
+    },
+    "protocol_versions_supported": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "product_categories": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/product_category"
+      }
+    },
+    "geographic_markets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "institution_id",
+    "institution_name",
+    "status",
+    "status_change_date",
+    "api_endpoint",
+    "certification",
+    "signing_key",
+    "protocol_versions_supported",
+    "product_categories"
+  ]
+}

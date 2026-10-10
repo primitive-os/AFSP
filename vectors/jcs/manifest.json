@@ -1,0 +1,153 @@
+{
+  "cases": [
+    {
+      "canonical": "jcs/rfc8785-sample.canonical.json",
+      "canonical_sha256": "sha256:2d5e01a318d0f0879ab568c4be289c8b1f64ef8921a53c6277d5e069978baacb",
+      "description": "RFC 8785 §3.2.2 sample: number formatting, string escaping, member order.",
+      "id": "rfc8785-sample",
+      "input": "jcs/rfc8785-sample.input.json"
+    },
+    {
+      "canonical": "jcs/rfc8785-sorting.canonical.json",
+      "canonical_sha256": "sha256:5e321556d22018a9656991a9e94f77ec175fa193e52a2429d312f8419ec8b08c",
+      "description": "RFC 8785 §3.2.3: members sorted by UTF-16 code units (U+1F600 sorts before U+FB33).",
+      "id": "rfc8785-sorting",
+      "input": "jcs/rfc8785-sorting.input.json"
+    },
+    {
+      "canonical": "jcs/rfc8785-appendix-b-numbers.canonical.json",
+      "canonical_sha256": "sha256:a56b6518045d90a7d96b43cdb52e6da1a59ff68c3e2825499f8dab0431b21353",
+      "description": "RFC 8785 Appendix B: ECMAScript number serialization of 18 of its 23 IEEE 754 values (including -0 and subnormals), in order. The other five are in rfc8785-appendix-b-unsafe-integers.",
+      "id": "rfc8785-appendix-b-numbers",
+      "input": "jcs/rfc8785-appendix-b-numbers.input.json",
+      "numbers": [
+        {
+          "canonical": "0",
+          "ieee754": "0000000000000000"
+        },
+        {
+          "canonical": "0",
+          "ieee754": "8000000000000000"
+        },
+        {
+          "canonical": "5e-324",
+          "ieee754": "0000000000000001"
+        },
+        {
+          "canonical": "-5e-324",
+          "ieee754": "8000000000000001"
+        },
+        {
+          "canonical": "1.7976931348623157e+308",
+          "ieee754": "7fefffffffffffff"
+        },
+        {
+          "canonical": "-1.7976931348623157e+308",
+          "ieee754": "ffefffffffffffff"
+        },
+        {
+          "canonical": "9.999999999999997e+22",
+          "ieee754": "44b52d02c7e14af5"
+        },
+        {
+          "canonical": "1e+23",
+          "ieee754": "44b52d02c7e14af6"
+        },
+        {
+          "canonical": "1.0000000000000001e+23",
+          "ieee754": "44b52d02c7e14af7"
+        },
+        {
+          "canonical": "1e+21",
+          "ieee754": "444b1ae4d6e2ef50"
+        },
+        {
+          "canonical": "9.999999999999997e-7",
+          "ieee754": "3eb0c6f7a0b5ed8c"
+        },
+        {
+          "canonical": "0.000001",
+          "ieee754": "3eb0c6f7a0b5ed8d"
+        },
+        {
+          "canonical": "333333333.3333332",
+          "ieee754": "41b3de4355555553"
+        },
+        {
+          "canonical": "333333333.33333325",
+          "ieee754": "41b3de4355555554"
+        },
+        {
+          "canonical": "333333333.3333333",
+          "ieee754": "41b3de4355555555"
+        },
+        {
+          "canonical": "333333333.3333334",
+          "ieee754": "41b3de4355555556"
+        },
+        {
+          "canonical": "333333333.33333343",
+          "ieee754": "41b3de4355555557"
+        },
+        {
+          "canonical": "-0.0000033333333333333333",
+          "ieee754": "becbf647612f3696"
+        }
+      ]
+    },
+    {
+      "description": "The five RFC 8785 Appendix B values that are integers of magnitude above 2^53-1 and below 10^21 (2^53, -2^53, 2^68, 999999999999999700000, 999999999999999900000). RFC 8785 serializes them as integer literals, which languages re-parse differently, so AFSP's profile rejects them (P1, RFC 7493 §2.2): canonicalization fails (malformed).",
+      "expected_error": "malformed",
+      "id": "rfc8785-appendix-b-unsafe-integers",
+      "input": "jcs/rfc8785-appendix-b-unsafe-integers.input.json"
+    },
+    {
+      "canonical": "jcs/afsp-scores.canonical.json",
+      "canonical_sha256": "sha256:1eb490f845c5c4e1a7f48998e67aa71624fdb77c776a49652965319ebf284632",
+      "description": "AFSP scores and confidences: 1.0 serializes as 1; integers stay integers.",
+      "id": "afsp-scores",
+      "input": "jcs/afsp-scores.input.json"
+    },
+    {
+      "canonical": "jcs/float-formatting.canonical.json",
+      "canonical_sha256": "sha256:443ff9fb7f7cc0d57a6c2840efc06fb44f73ddf2e10166fa5de594d2b04e2d55",
+      "description": "Exponent thresholds: 1e21 and above and below 1e-6 use exponents; negative numbers; -0.0 is 0.",
+      "id": "float-formatting",
+      "input": "jcs/float-formatting.input.json"
+    },
+    {
+      "description": "Integral values above 2^53-1 written as doubles (1e20, 123456789012345680000.0) would serialize as integer literals that cannot be carried exactly across languages; canonicalization fails (malformed), as for integer-too-large (P1, RFC 7493 §2.2).",
+      "expected_error": "malformed",
+      "id": "unsafe-integral-doubles",
+      "input": "jcs/unsafe-integral-doubles.input.json"
+    },
+    {
+      "canonical": "jcs/string-escaping.canonical.json",
+      "canonical_sha256": "sha256:efb6ee54d507f8a09725011b51cbb8e966470d7021590801fb5323778f472580",
+      "description": "Only \" \\\\ and control characters are escaped; / and non-ASCII are literal; controls use lowercase \\u00xx or the short forms.",
+      "id": "string-escaping",
+      "input": "jcs/string-escaping.input.json"
+    },
+    {
+      "canonical": "jcs/nesting-and-whitespace.canonical.json",
+      "canonical_sha256": "sha256:5d42363becaa80b0252784f3a3bd4c00268fce8368d883db0a77bd46150849fd",
+      "description": "Insignificant whitespace removed; nested members sorted; arrays keep their order; empty containers.",
+      "id": "nesting-and-whitespace",
+      "input": "jcs/nesting-and-whitespace.input.json"
+    },
+    {
+      "description": "Integers above 2^53-1 cannot be carried exactly across languages; canonicalization fails (malformed).",
+      "expected_error": "malformed",
+      "id": "integer-too-large",
+      "input": "jcs/integer-too-large.input.json"
+    },
+    {
+      "canonical": "jcs/afsp-s4-attestation.canonical.json",
+      "canonical_sha256": "sha256:5ef8ddd0bc528151470547cfda5d4a6ac53e8959a1b31dac46b32587c7f2c805",
+      "description": "The Appendix A S4 attestation, pretty-printed, and its canonical form.",
+      "id": "afsp-s4-attestation",
+      "input": "jcs/afsp-s4-attestation.input.json"
+    }
+  ],
+  "description": "RFC 8785 JSON Canonicalization Scheme cases. Canonicalize the input bytes and compare, byte for byte, with the canonical file (UTF-8, no trailing newline)."
+}

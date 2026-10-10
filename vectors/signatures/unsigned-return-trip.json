@@ -1,0 +1,36 @@
+{
+  "description": "The signature value is missing.",
+  "document": {
+    "institution_id": "sunrise_digital_bank_afsp_001",
+    "institution_signature": {
+      "algorithm": "ECDSA-P256",
+      "signed_by": "sunrise_digital_bank_signing_key_2026"
+    },
+    "opening_details": {
+      "account_opened": true,
+      "active_within_30_days": "unknown",
+      "funded_within_7_days": "unknown",
+      "product_category": "SAVINGS"
+    },
+    "outcome": "OPENED",
+    "outcome_timestamp": "2026-08-18T14:25:57Z",
+    "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+    "return_trip_type": "ACCOUNT_OPENING_CONFIRMATION",
+    "session_id": "sess_2e4f6a8c0b2d4f6a"
+  },
+  "expected": {
+    "code": "bad_signature",
+    "valid": false
+  },
+  "id": "unsigned-return-trip",
+  "kind": "return_trip",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "sunrise_digital_bank_signing_key_2026",
+    "kty": "EC",
+    "x": "SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0",
+    "y": "Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU"
+  },
+  "signing_input": "{\"institution_id\":\"sunrise_digital_bank_afsp_001\",\"institution_signature\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"sunrise_digital_bank_signing_key_2026\"},\"opening_details\":{\"account_opened\":true,\"active_within_30_days\":\"unknown\",\"funded_within_7_days\":\"unknown\",\"product_category\":\"SAVINGS\"},\"outcome\":\"OPENED\",\"outcome_timestamp\":\"2026-08-18T14:25:57Z\",\"package_id\":\"pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b\",\"return_trip_type\":\"ACCOUNT_OPENING_CONFIRMATION\",\"session_id\":\"sess_2e4f6a8c0b2d4f6a\"}",
+  "signing_input_sha256": "sha256:d16c18650b531508c456bc3239c3d86ff47b3b8b62588d33b94e85a264e05924"
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/institution-response.schema.json",
+  "title": "Institution response",
+  "description": "A participating institution's signed response to a reverse inquiry (§9.4). The signature block names its key in signed_with.",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "inquiry_id": {
+      "type": "string"
+    },
+    "institution_id": {
+      "type": "string"
+    },
+    "response_timestamp": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "product_offers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "offer_id": {
+            "type": "string"
+          },
+          "institution_legal_name": {
+            "type": "string"
+          },
+          "deposit_insurer": {
+            "enum": [
+              "FDIC",
+              "NCUA"
+            ]
+          },
+          "product_category": {
+            "$ref": "common.schema.json#/$defs/product_category"
+          },
+          "annual_percentage_yield": {
+            "type": "number",
+            "description": "Deposit products."
+          },
+          "apy_accurate_as_of": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/date"
+              },
+              {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              }
+            ]
+          },
+          "rate_type": {
+            "enum": [
+              "FIXED",
+              "VARIABLE"
+            ]
+          },
+          "term_months": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Certificates of deposit only."
+          },
+          "annual_percentage_rate": {
+            "type": "number",
+            "description": "Credit products."
+          },
+          "fee_schedule": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fee_type": {
+                  "enum": [
+                    "MONTHLY_MAINTENANCE",
+                    "TRANSACTION",
+                    "OVERDRAFT",
+                    "EARLY_WITHDRAWAL",
+                    "WIRE_TRANSFER"
+                  ]
+                },
+                "fee_amount": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "waiver_conditions": {
+                  "type": "string"
+                },
+                "fee_frequency": {
+                  "enum": [
+                    "MONTHLY",
+                    "ANNUAL",
+                    "PER_TRANSACTION",
+                    "ONE_TIME"
+                  ]
+                }
+              },
+              "required": [
+                "fee_type",
+                "fee_amount",
+                "fee_frequency"
+              ]
+            }
+          },
+          "minimum_balance_requirement": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minimum_opening_deposit": {
+            "type": "number",
+            "minimum": 0
+          },
+          "maximum_balance_limit": {
+            "type": "number",
+            "minimum": 0
+          },
+          "feature_set": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eligibility_confirmation": {
+            "enum": [
+              "ELIGIBLE",
+              "LIKELY_ELIGIBLE",
+              "REQUIRES_REVIEW"
+            ]
+          },
+          "approval_probability_signal": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "required": [
+          "offer_id",
+          "institution_legal_name",
+          "deposit_insurer",
+          "product_category",
+          "eligibility_confirmation",
+          "approval_probability_signal"
+        ],
+        "if": {
+          "properties": {
+            "product_category": {
+              "const": "CD"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "term_months"
+          ]
+        }
+      }
+    },
+    "institution_signature": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/signature_block"
+        },
+        {
+          "required": [
+            "signed_with"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "inquiry_id",
+    "institution_id",
+    "response_timestamp",
+    "product_offers",
+    "institution_signature"
+  ]
+}

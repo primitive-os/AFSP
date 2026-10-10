@@ -1,0 +1,26 @@
+{
+  "authorized_agent_id": "agt_aip_assistant_20260801_prod",
+  "biometric_event": {
+    "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+    "timestamp": "2026-08-18T14:24:13Z",
+    "type": "FIDO2_BIOMETRIC"
+  },
+  "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+  "receiving_institution_id": "sunrise_digital_bank_afsp_001",
+  "scope": {
+    "action_classes": [
+      "INITIATE"
+    ],
+    "product_categories": [
+      "SAVINGS"
+    ]
+  },
+  "servicing_intent_hash": "sha256:23594d3b3486668f792398a95d75ed1203d275e002066ad139432d69b52dcc29",
+  "signature": "MEQCIDbIWVa2VSKmoN5x913RoWRG4WFGTJvsznhGkJgOu5MzAiA9xlwqpQ54P6bgIDjVMUdpdXlThSBzOw8RGrUTqOg0NQ==",
+  "temporal_validity": {
+    "not_after": "2026-08-18T14:54:13Z",
+    "not_before": "2026-08-18T14:24:13Z"
+  },
+  "token_type": "AFSP_CONSUMER_AUTH",
+  "version": "0.1"
+}

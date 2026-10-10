@@ -1,0 +1,263 @@
+{
+  "description": "The trust list, signed by the AFSP administrator.",
+  "document": {
+    "agent_registries": [
+      {
+        "id": "afsp-agent-registry",
+        "keys": [
+          {
+            "key_id": "agent-registry-2026-q3",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "94ZqDUp5035002wzde11AzeHGGSr-rjnbBKDBqQx2VQ",
+              "y": "HH5bbJWDniIsQj5KBdgE9vqPFtD275fZMByB7-VJ6Zc"
+            },
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "CERTIFIED"
+      }
+    ],
+    "institutions": [
+      {
+        "api_endpoint": "https://afsp.harbor.example/v0.1",
+        "certification": {
+          "certified_date": "2026-07-01T00:00:00Z",
+          "kyc_rigor_status": "CURRENT",
+          "next_reverification_date": "2027-07-01T00:00:00Z",
+          "pathway": "STANDARD"
+        },
+        "geographic_markets": [
+          "US-CA",
+          "US-TX",
+          "US-FL"
+        ],
+        "institution_id": "harbor_federal_afsp_001",
+        "institution_name": "Harbor Federal Bank",
+        "product_categories": [
+          "SAVINGS",
+          "CHECKING",
+          "CD",
+          "MMA"
+        ],
+        "protocol_versions_supported": [
+          "0.1"
+        ],
+        "signing_key": {
+          "key_id": "harbor_federal_signing_key_2026",
+          "public_key": {
+            "crv": "P-256",
+            "kty": "EC",
+            "x": "G1dW-txyit4oz2m8aMmV3MpVevBgERpVIEUd3_-WTKs",
+            "y": "PbNR2HEeipXDGsCPjcGo7XvElDNfnzlwg2QYmG9IMUA"
+          },
+          "rotation_timestamp": "2026-07-01T00:00:00Z"
+        },
+        "status": "ACTIVE",
+        "status_change_date": "2026-07-01T00:00:00Z"
+      },
+      {
+        "api_endpoint": "https://afsp.sunrise.example/v0.1",
+        "certification": {
+          "certified_date": "2026-07-01T00:00:00Z",
+          "kyc_rigor_status": "CURRENT",
+          "next_reverification_date": "2027-07-01T00:00:00Z",
+          "pathway": "STANDARD"
+        },
+        "geographic_markets": [
+          "US-CA",
+          "US-TX",
+          "US-FL"
+        ],
+        "institution_id": "sunrise_digital_bank_afsp_001",
+        "institution_name": "Sunrise Digital Bank",
+        "product_categories": [
+          "SAVINGS",
+          "CHECKING",
+          "MMA"
+        ],
+        "protocol_versions_supported": [
+          "0.1"
+        ],
+        "signing_key": {
+          "key_id": "sunrise_digital_bank_signing_key_2026",
+          "public_key": {
+            "crv": "P-256",
+            "kty": "EC",
+            "x": "SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0",
+            "y": "Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU"
+          },
+          "rotation_timestamp": "2026-07-01T00:00:00Z"
+        },
+        "status": "ACTIVE",
+        "status_change_date": "2026-07-01T00:00:00Z"
+      },
+      {
+        "api_endpoint": "https://afsp.pacific.example/v0.1",
+        "certification": {
+          "certified_date": "2026-07-01T00:00:00Z",
+          "kyc_rigor_status": "CURRENT",
+          "next_reverification_date": "2027-07-01T00:00:00Z",
+          "pathway": "STANDARD"
+        },
+        "geographic_markets": [
+          "US-CA",
+          "US-TX",
+          "US-FL"
+        ],
+        "institution_id": "pacific_savings_coop_afsp_001",
+        "institution_name": "Pacific Savings Co-op",
+        "product_categories": [
+          "SAVINGS",
+          "CD"
+        ],
+        "protocol_versions_supported": [
+          "0.1"
+        ],
+        "signing_key": {
+          "key_id": "pacific_savings_signing_key_2026",
+          "public_key": {
+            "crv": "P-256",
+            "kty": "EC",
+            "x": "OAKc3yFrtg7ImmBX-54nUyhL-WgtK5C1ylHVlbnEAng",
+            "y": "L2Q2EEENBcSUE1DKIoKDAA6bPZId_z02-dd-WjRtq44"
+          },
+          "rotation_timestamp": "2026-07-01T00:00:00Z"
+        },
+        "status": "ACTIVE",
+        "status_change_date": "2026-07-01T00:00:00Z"
+      },
+      {
+        "api_endpoint": "https://afsp.legacy.example/v0.1",
+        "certification": {
+          "certified_date": "2026-07-01T00:00:00Z",
+          "kyc_rigor_status": "CURRENT",
+          "next_reverification_date": "2027-07-01T00:00:00Z",
+          "pathway": "STANDARD"
+        },
+        "geographic_markets": [
+          "US-CA",
+          "US-TX",
+          "US-FL"
+        ],
+        "institution_id": "legacy_trust_bank_afsp_001",
+        "institution_name": "Legacy Trust Bank",
+        "product_categories": [
+          "SAVINGS"
+        ],
+        "protocol_versions_supported": [
+          "0.1"
+        ],
+        "signing_key": {
+          "key_id": "legacy_trust_signing_key_2026",
+          "public_key": {
+            "crv": "P-256",
+            "kty": "EC",
+            "x": "-uugHXztF9nLw5KadZgFzkZdkGvguOK3omA1J0mxsBc",
+            "y": "2otaEzkNe_CkD5I0DIZ05uc32RTZnbQXdaBZssqcb-8"
+          },
+          "rotation_timestamp": "2026-07-01T00:00:00Z"
+        },
+        "status": "INACTIVE",
+        "status_change_date": "2026-07-01T00:00:00Z"
+      }
+    ],
+    "issued_at": "2026-08-17T14:23:07Z",
+    "issuer": "afsp-administrator",
+    "list_type": "AFSP_TRUST_LIST",
+    "next_update": "2026-08-24T14:23:07Z",
+    "platforms": [
+      {
+        "id": "platform.afsp.org",
+        "keys": [
+          {
+            "key_id": "platform-2026-q3",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "J2I4txD-jBUZSC602hBte9hOE5ie0keV_4jO9sT3xmA",
+              "y": "UHon5nxqt_qq4caPEzMjTewrcYTuRqy07TnB2zxQgjQ"
+            },
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "CERTIFIED"
+      }
+    ],
+    "s4_providers": [
+      {
+        "id": "certified_s4_provider_001",
+        "keys": [
+          {
+            "key_id": "s4-provider-001-2026",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "wkmRnq5tCuUzom1iKYOhvjq3V7NGm5ybSrPZGZTPW80",
+              "y": "Sk382EeSzwHraiCU2_lDaV-CKNJFcCl7irJeXo78fJA"
+            },
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "CERTIFIED"
+      }
+    ],
+    "s5_providers": [
+      {
+        "id": "certified_s5_provider_001",
+        "keys": [
+          {
+            "key_id": "s5_provider_signing_key_2026_q3",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "_3ImQ_jWE63SdKcftX50Eg4qhoTzWLHDZzUv4pxqNcA",
+              "y": "iXtkeaFQHuChZGtrNR4mIjLqBBIMX1nPIZULx5E0XG0"
+            },
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "CERTIFIED"
+      },
+      {
+        "id": "certified_s5_provider_002",
+        "keys": [
+          {
+            "key_id": "s5-provider-002-2026-q3",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "rT9gpUb4KAcW82oHsl5T6TeWoP7tnnC2hd2_GvoTE_A",
+              "y": "Aer60b4ado26du_XGKlPhTGu5vZ6Ky3riwh2x8OvwH4"
+            },
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "CERTIFIED"
+      }
+    ],
+    "sequence": 42,
+    "signature": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEUCIQCPCrPBPnO04WIfm/TlWxqgluwjkrwFh0gAi7QHQwo3EAIgLITasEctTpSqYMrte4yo+zxINRvpLQ+Lx37gROpKGNg=",
+      "signed_by": "afsp-administrator-2026"
+    },
+    "version": "0.1"
+  },
+  "expected": {
+    "code": null,
+    "valid": true
+  },
+  "id": "valid-trust-list",
+  "kind": "trust_list",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "afsp-administrator-2026",
+    "kty": "EC",
+    "x": "LGpLYi4HOfBzECauTsVUtsH-Oj7BfVBAxzZrlh3d3yw",
+    "y": "F4EU7fvQGyG5_tqO8DwXsx3lrzCnGSlm7gYHlLMXdJ8"
+  },
+  "signing_input": "{\"agent_registries\":[{\"id\":\"afsp-agent-registry\",\"keys\":[{\"key_id\":\"agent-registry-2026-q3\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"94ZqDUp5035002wzde11AzeHGGSr-rjnbBKDBqQx2VQ\",\"y\":\"HH5bbJWDniIsQj5KBdgE9vqPFtD275fZMByB7-VJ6Zc\"},\"status\":\"ACTIVE\"}],\"status\":\"CERTIFIED\"}],\"institutions\":[{\"api_endpoint\":\"https://afsp.harbor.example/v0.1\",\"certification\":{\"certified_date\":\"2026-07-01T00:00:00Z\",\"kyc_rigor_status\":\"CURRENT\",\"next_reverification_date\":\"2027-07-01T00:00:00Z\",\"pathway\":\"STANDARD\"},\"geographic_markets\":[\"US-CA\",\"US-TX\",\"US-FL\"],\"institution_id\":\"harbor_federal_afsp_001\",\"institution_name\":\"Harbor Federal Bank\",\"product_categories\":[\"SAVINGS\",\"CHECKING\",\"CD\",\"MMA\"],\"protocol_versions_supported\":[\"0.1\"],\"signing_key\":{\"key_id\":\"harbor_federal_signing_key_2026\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"G1dW-txyit4oz2m8aMmV3MpVevBgERpVIEUd3_-WTKs\",\"y\":\"PbNR2HEeipXDGsCPjcGo7XvElDNfnzlwg2QYmG9IMUA\"},\"rotation_timestamp\":\"2026-07-01T00:00:00Z\"},\"status\":\"ACTIVE\",\"status_change_date\":\"2026-07-01T00:00:00Z\"},{\"api_endpoint\":\"https://afsp.sunrise.example/v0.1\",\"certification\":{\"certified_date\":\"2026-07-01T00:00:00Z\",\"kyc_rigor_status\":\"CURRENT\",\"next_reverification_date\":\"2027-07-01T00:00:00Z\",\"pathway\":\"STANDARD\"},\"geographic_markets\":[\"US-CA\",\"US-TX\",\"US-FL\"],\"institution_id\":\"sunrise_digital_bank_afsp_001\",\"institution_name\":\"Sunrise Digital Bank\",\"product_categories\":[\"SAVINGS\",\"CHECKING\",\"MMA\"],\"protocol_versions_supported\":[\"0.1\"],\"signing_key\":{\"key_id\":\"sunrise_digital_bank_signing_key_2026\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0\",\"y\":\"Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU\"},\"rotation_timestamp\":\"2026-07-01T00:00:00Z\"},\"status\":\"ACTIVE\",\"status_change_date\":\"2026-07-01T00:00:00Z\"},{\"api_endpoint\":\"https://afsp.pacific.example/v0.1\",\"certification\":{\"certified_date\":\"2026-07-01T00:00:00Z\",\"kyc_rigor_status\":\"CURRENT\",\"next_reverification_date\":\"2027-07-01T00:00:00Z\",\"pathway\":\"STANDARD\"},\"geographic_markets\":[\"US-CA\",\"US-TX\",\"US-FL\"],\"institution_id\":\"pacific_savings_coop_afsp_001\",\"institution_name\":\"Pacific Savings Co-op\",\"product_categories\":[\"SAVINGS\",\"CD\"],\"protocol_versions_supported\":[\"0.1\"],\"signing_key\":{\"key_id\":\"pacific_savings_signing_key_2026\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"OAKc3yFrtg7ImmBX-54nUyhL-WgtK5C1ylHVlbnEAng\",\"y\":\"L2Q2EEENBcSUE1DKIoKDAA6bPZId_z02-dd-WjRtq44\"},\"rotation_timestamp\":\"2026-07-01T00:00:00Z\"},\"status\":\"ACTIVE\",\"status_change_date\":\"2026-07-01T00:00:00Z\"},{\"api_endpoint\":\"https://afsp.legacy.example/v0.1\",\"certification\":{\"certified_date\":\"2026-07-01T00:00:00Z\",\"kyc_rigor_status\":\"CURRENT\",\"next_reverification_date\":\"2027-07-01T00:00:00Z\",\"pathway\":\"STANDARD\"},\"geographic_markets\":[\"US-CA\",\"US-TX\",\"US-FL\"],\"institution_id\":\"legacy_trust_bank_afsp_001\",\"institution_name\":\"Legacy Trust Bank\",\"product_categories\":[\"SAVINGS\"],\"protocol_versions_supported\":[\"0.1\"],\"signing_key\":{\"key_id\":\"legacy_trust_signing_key_2026\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"-uugHXztF9nLw5KadZgFzkZdkGvguOK3omA1J0mxsBc\",\"y\":\"2otaEzkNe_CkD5I0DIZ05uc32RTZnbQXdaBZssqcb-8\"},\"rotation_timestamp\":\"2026-07-01T00:00:00Z\"},\"status\":\"INACTIVE\",\"status_change_date\":\"2026-07-01T00:00:00Z\"}],\"issued_at\":\"2026-08-17T14:23:07Z\",\"issuer\":\"afsp-administrator\",\"list_type\":\"AFSP_TRUST_LIST\",\"next_update\":\"2026-08-24T14:23:07Z\",\"platforms\":[{\"id\":\"platform.afsp.org\",\"keys\":[{\"key_id\":\"platform-2026-q3\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"J2I4txD-jBUZSC602hBte9hOE5ie0keV_4jO9sT3xmA\",\"y\":\"UHon5nxqt_qq4caPEzMjTewrcYTuRqy07TnB2zxQgjQ\"},\"status\":\"ACTIVE\"}],\"status\":\"CERTIFIED\"}],\"s4_providers\":[{\"id\":\"certified_s4_provider_001\",\"keys\":[{\"key_id\":\"s4-provider-001-2026\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"wkmRnq5tCuUzom1iKYOhvjq3V7NGm5ybSrPZGZTPW80\",\"y\":\"Sk382EeSzwHraiCU2_lDaV-CKNJFcCl7irJeXo78fJA\"},\"status\":\"ACTIVE\"}],\"status\":\"CERTIFIED\"}],\"s5_providers\":[{\"id\":\"certified_s5_provider_001\",\"keys\":[{\"key_id\":\"s5_provider_signing_key_2026_q3\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"_3ImQ_jWE63SdKcftX50Eg4qhoTzWLHDZzUv4pxqNcA\",\"y\":\"iXtkeaFQHuChZGtrNR4mIjLqBBIMX1nPIZULx5E0XG0\"},\"status\":\"ACTIVE\"}],\"status\":\"CERTIFIED\"},{\"id\":\"certified_s5_provider_002\",\"keys\":[{\"key_id\":\"s5-provider-002-2026-q3\",\"public_key\":{\"crv\":\"P-256\",\"kty\":\"EC\",\"x\":\"rT9gpUb4KAcW82oHsl5T6TeWoP7tnnC2hd2_GvoTE_A\",\"y\":\"Aer60b4ado26du_XGKlPhTGu5vZ6Ky3riwh2x8OvwH4\"},\"status\":\"ACTIVE\"}],\"status\":\"CERTIFIED\"}],\"sequence\":42,\"signature\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"afsp-administrator-2026\"},\"version\":\"0.1\"}",
+  "signing_input_sha256": "sha256:dce48feb1fdaed926a991e31d116edf2dc29a1ba30cb3a4b6d3c61e0a226e6a3"
+}

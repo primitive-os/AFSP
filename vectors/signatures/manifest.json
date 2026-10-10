@@ -1,0 +1,209 @@
+{
+  "cases": [
+    {
+      "file": "signatures/valid-tier1-key-certificate.json",
+      "id": "valid-tier1-key-certificate",
+      "kind": "tier_key_certificate",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-tier2-key-certificate.json",
+      "id": "valid-tier2-key-certificate",
+      "kind": "tier_key_certificate",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s1-agent-provenance.json",
+      "id": "valid-s1-agent-provenance",
+      "kind": "agent_provenance",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-tier1-authorization-token.json",
+      "id": "valid-tier1-authorization-token",
+      "kind": "consumer_authorization",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-scope-expansion-token.json",
+      "id": "valid-scope-expansion-token",
+      "kind": "scope_expansion",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s3-federated-referral.json",
+      "id": "valid-s3-federated-referral",
+      "kind": "federated_referral",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s4-financial-profile.json",
+      "id": "valid-s4-financial-profile",
+      "kind": "financial_profile",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s5-provider-001.json",
+      "id": "valid-s5-provider-001",
+      "kind": "behavioral_score",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s5-provider-002.json",
+      "id": "valid-s5-provider-002",
+      "kind": "behavioral_score",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-s5-composite.json",
+      "id": "valid-s5-composite",
+      "kind": "behavioral_composite",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-package-unbound.json",
+      "id": "valid-package-unbound",
+      "kind": "package",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-institution-response.json",
+      "id": "valid-institution-response",
+      "kind": "institution_response",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-tier2-authorization-token.json",
+      "id": "valid-tier2-authorization-token",
+      "kind": "consumer_authorization",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-package-bound.json",
+      "id": "valid-package-bound",
+      "kind": "package",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-clearance-response.json",
+      "id": "valid-clearance-response",
+      "kind": "clearance_response",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-session-token.json",
+      "id": "valid-session-token",
+      "kind": "session_token",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-audit-record.json",
+      "id": "valid-audit-record",
+      "kind": "audit_record",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-return-trip.json",
+      "id": "valid-return-trip",
+      "kind": "return_trip",
+      "valid": true
+    },
+    {
+      "file": "signatures/valid-trust-list.json",
+      "id": "valid-trust-list",
+      "kind": "trust_list",
+      "valid": true
+    },
+    {
+      "file": "signatures/tampered-package.json",
+      "id": "tampered-package",
+      "kind": "package",
+      "valid": false
+    },
+    {
+      "file": "signatures/tampered-consumer-authorization.json",
+      "id": "tampered-consumer-authorization",
+      "kind": "consumer_authorization",
+      "valid": false
+    },
+    {
+      "file": "signatures/tampered-financial-profile.json",
+      "id": "tampered-financial-profile",
+      "kind": "financial_profile",
+      "valid": false
+    },
+    {
+      "file": "signatures/tampered-clearance-response.json",
+      "id": "tampered-clearance-response",
+      "kind": "clearance_response",
+      "valid": false
+    },
+    {
+      "file": "signatures/tampered-signed-with.json",
+      "id": "tampered-signed-with",
+      "kind": "institution_response",
+      "valid": false
+    },
+    {
+      "file": "signatures/tampered-attestation-statement.json",
+      "id": "tampered-attestation-statement",
+      "kind": "behavioral_score",
+      "valid": false
+    },
+    {
+      "file": "signatures/wrong-key-package.json",
+      "id": "wrong-key-package",
+      "kind": "package",
+      "valid": false
+    },
+    {
+      "file": "signatures/wrong-key-scope-expansion.json",
+      "id": "wrong-key-scope-expansion",
+      "kind": "scope_expansion",
+      "valid": false
+    },
+    {
+      "file": "signatures/algorithm-not-p256.json",
+      "id": "algorithm-not-p256",
+      "kind": "federated_referral",
+      "valid": false
+    },
+    {
+      "file": "signatures/unsigned-return-trip.json",
+      "id": "unsigned-return-trip",
+      "kind": "return_trip",
+      "valid": false
+    },
+    {
+      "file": "signatures/raw-r-s-session-token.json",
+      "id": "raw-r-s-session-token",
+      "kind": "session_token",
+      "valid": false
+    },
+    {
+      "file": "signatures/raw-r-s-consumer-authorization.json",
+      "id": "raw-r-s-consumer-authorization",
+      "kind": "consumer_authorization",
+      "valid": false
+    },
+    {
+      "file": "signatures/high-s-session-token.json",
+      "id": "high-s-session-token",
+      "kind": "session_token",
+      "valid": false
+    },
+    {
+      "file": "signatures/base64url-session-token.json",
+      "id": "base64url-session-token",
+      "kind": "session_token",
+      "valid": false
+    },
+    {
+      "file": "signatures/non-minimal-der-session-token.json",
+      "id": "non-minimal-der-session-token",
+      "kind": "session_token",
+      "valid": false
+    }
+  ],
+  "description": "Single-document signature cases: verify `document` of `kind` with `public_key`. The signing input is the RFC 8785 canonical form of the document with the signature value removed."
+}

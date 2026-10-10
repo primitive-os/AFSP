@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/clearance-response.schema.json",
+  "title": "Clearance response",
+  "description": "The receiving institution's signed clearance decision for a package (§10.2 Step 3, Appendix A.8). A PROCEED_TO_KYC response carries exactly the members the session token embeds, so the institution can later re-verify its own signature from the token (§10.3); reason_codes appear only on the other decisions. The top-level institution_signature is over the canonical response without it. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "package_id": {
+      "$ref": "common.schema.json#/$defs/package_id"
+    },
+    "institution_id": {
+      "type": "string"
+    },
+    "clearance_decision": {
+      "$ref": "common.schema.json#/$defs/clearance_decision"
+    },
+    "clearance_timestamp": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "institution_signature": {
+      "$ref": "common.schema.json#/$defs/signature_value"
+    }
+  },
+  "required": [
+    "package_id",
+    "institution_id",
+    "clearance_decision",
+    "clearance_timestamp",
+    "institution_signature"
+  ],
+  "if": {
+    "properties": {
+      "clearance_decision": {
+        "const": "PROCEED_TO_KYC"
+      }
+    }
+  },
+  "then": {
+    "not": {
+      "required": [
+        "reason_codes"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "legacy_trust_signing_key_2026",
+  "kty": "EC",
+  "x": "-uugHXztF9nLw5KadZgFzkZdkGvguOK3omA1J0mxsBc",
+  "y": "2otaEzkNe_CkD5I0DIZ05uc32RTZnbQXdaBZssqcb-8"
+}

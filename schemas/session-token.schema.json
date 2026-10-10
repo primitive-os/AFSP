@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/session-token.schema.json",
+  "title": "AFSP session token",
+  "description": "The single-use session token the platform mints only on PROCEED_TO_KYC (§10.3), embedding the institution's own clearance signature. token_id is a reference proposal (unique identifier for the consumed-token registry and the audit record).",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "token_type": {
+      "const": "AFSP_SESSION"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "token_id": {
+      "type": "string",
+      "pattern": "^stk_[0-9a-f]{32,}$",
+      "description": "Reference proposal."
+    },
+    "package_id": {
+      "$ref": "common.schema.json#/$defs/package_id"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "institution_clearance": {
+      "type": "object",
+      "properties": {
+        "institution_id": {
+          "type": "string"
+        },
+        "clearance_decision": {
+          "const": "PROCEED_TO_KYC",
+          "description": "Conditional minting (§10.3)."
+        },
+        "clearance_timestamp": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "institution_signature": {
+          "$ref": "common.schema.json#/$defs/signature_value"
+        }
+      },
+      "required": [
+        "institution_id",
+        "clearance_decision",
+        "clearance_timestamp",
+        "institution_signature"
+      ]
+    },
+    "validity": {
+      "type": "object",
+      "properties": {
+        "not_before": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "not_after": {
+          "$ref": "common.schema.json#/$defs/timestamp",
+          "description": "At most 1800 s after not_before."
+        },
+        "single_use": {
+          "const": true
+        }
+      },
+      "required": [
+        "not_before",
+        "not_after",
+        "single_use"
+      ]
+    },
+    "platform_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "token_type",
+    "version",
+    "package_id",
+    "session_id",
+    "institution_clearance",
+    "validity",
+    "platform_signature"
+  ]
+}

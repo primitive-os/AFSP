@@ -1,0 +1,1769 @@
+{
+  "afsp_version": "0.1",
+  "cases": [
+    {
+      "description": "The Appendix A bound package: every check passes.",
+      "expected": {
+        "check": null,
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": null,
+        "outcome": "ACCEPTED",
+        "status": null
+      },
+      "id": "accept-appendix-a",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/accept-appendix-a.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/accept-appendix-a.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2, Appendix A.8"
+    },
+    {
+      "description": "S2 without the Tier 2 step-up still authorizes PRESENT.",
+      "expected": {
+        "check": null,
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": null,
+        "outcome": "ACCEPTED",
+        "status": null
+      },
+      "id": "accept-present-with-tier1-only",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/accept-present-with-tier1-only.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/accept-present-with-tier1-only.json",
+      "request": {
+        "action_class": "PRESENT",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.4, §6.2 VAL-08"
+    },
+    {
+      "description": "S5 absent: accepted; the risk framework applies (§3.3).",
+      "expected": {
+        "check": null,
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "SKIPPED"
+        },
+        "code": null,
+        "outcome": "ACCEPTED",
+        "status": null
+      },
+      "id": "accept-s5-absent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/accept-s5-absent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/accept-s5-absent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3, §6.2 VAL-10"
+    },
+    {
+      "description": "S3 absent: accepted (optional signal).",
+      "expected": {
+        "check": null,
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": null,
+        "outcome": "ACCEPTED",
+        "status": null
+      },
+      "id": "accept-s3-absent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/accept-s3-absent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/accept-s3-absent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3"
+    },
+    {
+      "description": "S5 as a single certified provider's submission.",
+      "expected": {
+        "check": null,
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": null,
+        "outcome": "ACCEPTED",
+        "status": null
+      },
+      "id": "accept-s5-single-provider",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/accept-s5-single-provider.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/accept-s5-single-provider.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§11.2, §6.2 VAL-10"
+    },
+    {
+      "description": "signals_present omits S3, which the package carries.",
+      "expected": {
+        "check": "STRUCTURE",
+        "checks": {
+          "STRUCTURE": "FAIL"
+        },
+        "code": "malformed",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "structure-signals-present-mismatch",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/structure-signals-present-mismatch.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/structure-signals-present-mismatch.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.1"
+    },
+    {
+      "description": "package_id carries fewer than 128 bits.",
+      "expected": {
+        "check": "STRUCTURE",
+        "checks": {
+          "STRUCTURE": "FAIL"
+        },
+        "code": "malformed",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "structure-short-package-id",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/structure-short-package-id.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/structure-short-package-id.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": false,
+      "spec": "§6.1"
+    },
+    {
+      "description": "afsp_version is not 0.1.",
+      "expected": {
+        "check": "STRUCTURE",
+        "checks": {
+          "STRUCTURE": "FAIL"
+        },
+        "code": "malformed",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "structure-unsupported-version",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/structure-unsupported-version.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/structure-unsupported-version.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": false,
+      "spec": "§6.1"
+    },
+    {
+      "description": "The package bound to Sunrise is presented to Pacific Savings.",
+      "expected": {
+        "check": "VAL-04a",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-04a": "FAIL"
+        },
+        "code": "wrong_binding",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-04a-redirected",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-04a-redirected.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "pacific_savings_coop_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-04a-redirected.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.1, §6.2 VAL-04a"
+    },
+    {
+      "description": "The unbound reverse-inquiry package carries no institution nonce.",
+      "expected": {
+        "check": "VAL-04a",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-04a": "FAIL"
+        },
+        "code": "wrong_binding",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-04a-unbound",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-04a-unbound.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-04a-unbound.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.1, §6.2 VAL-04a"
+    },
+    {
+      "description": "Presented after the nonce expired (1800 s after assembly, plus 30 s skew).",
+      "expected": {
+        "check": "VAL-04a",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-04a": "FAIL"
+        },
+        "code": "expired",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-04a-expired-nonce",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-04a-expired-nonce.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:53:40Z",
+      "now_unix": 1787064820,
+      "report": "reports/val-04a-expired-nonce.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.1, §6.2 VAL-04a"
+    },
+    {
+      "description": "A signal member changed after the platform signed.",
+      "expected": {
+        "check": "VAL-01",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "bad_signature",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-01-tampered",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-01-tampered.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-01-tampered.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-01"
+    },
+    {
+      "description": "Signed by a key that is not a published platform key.",
+      "expected": {
+        "check": "VAL-01",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "bad_signature",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-01-untrusted-key",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-01-untrusted-key.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-01-untrusted-key.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-01"
+    },
+    {
+      "description": "receiving_institution_id names Pacific; the nonce still binds Sunrise's key.",
+      "expected": {
+        "check": "VAL-02",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "wrong_binding",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-02-wrong-institution",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-02-wrong-institution.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-02-wrong-institution.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-02"
+    },
+    {
+      "description": "validity_window exceeds 3600 s.",
+      "expected": {
+        "check": "VAL-03",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "validity_too_long",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-03-too-long",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-03-too-long.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-03-too-long.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.1, §6.2 VAL-03"
+    },
+    {
+      "description": "validity_window starts 600 s in the future.",
+      "expected": {
+        "check": "VAL-03",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "not_yet_valid",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-03-not-yet-valid",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-03-not-yet-valid.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-03-not-yet-valid.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-03"
+    },
+    {
+      "description": "Two-step case: the same package is presented twice to the same verifier. The first presentation is ACCEPTED; the second is a replay.",
+      "expected": {
+        "check": "VAL-04",
+        "checks": {
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "FAIL",
+          "VAL-04a": "PASS"
+        },
+        "code": "replay",
+        "outcome": "SESSION_TERMINATED",
+        "status": "FAIL"
+      },
+      "id": "val-04-replay",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-04-replay.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:16Z",
+      "now_unix": 1787063056,
+      "prior_presentations": [
+        {
+          "expected": {
+            "check": null,
+            "checks": {
+              "REF-01": "PASS",
+              "STRUCTURE": "PASS",
+              "VAL-01": "PASS",
+              "VAL-02": "PASS",
+              "VAL-03": "PASS",
+              "VAL-04": "PASS",
+              "VAL-04a": "PASS",
+              "VAL-05": "PASS",
+              "VAL-06": "PASS",
+              "VAL-07": "PASS",
+              "VAL-08": "PASS",
+              "VAL-08a": "PASS",
+              "VAL-09": "PASS",
+              "VAL-10": "PASS"
+            },
+            "code": null,
+            "outcome": "ACCEPTED",
+            "status": null
+          },
+          "now": "2026-08-18T14:24:15Z",
+          "now_unix": 1787063055
+        }
+      ],
+      "report": "reports/val-04-replay.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-04"
+    },
+    {
+      "description": "S1 is absent (mandatory, §3.3).",
+      "expected": {
+        "check": "VAL-05",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "FAIL",
+          "VAL-06": "SKIPPED",
+          "VAL-07": "SKIPPED",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "malformed",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-05-s1-absent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-05-s1-absent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-05-s1-absent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3, §6.2 VAL-05"
+    },
+    {
+      "description": "The registry record shows the agent SUSPENDED.",
+      "expected": {
+        "check": "VAL-05",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "FAIL",
+          "VAL-06": "SKIPPED",
+          "VAL-07": "SKIPPED",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "not_certified",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-05-suspended",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-05-suspended.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-05-suspended.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-05"
+    },
+    {
+      "description": "S1 is signed by a key that is not an agent registry key.",
+      "expected": {
+        "check": "VAL-05",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "FAIL",
+          "VAL-06": "SKIPPED",
+          "VAL-07": "SKIPPED",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "untrusted_key",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-05-wrong-signer",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-05-wrong-signer.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-05-wrong-signer.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-05"
+    },
+    {
+      "description": "The running build hash is not a certified build.",
+      "expected": {
+        "check": "VAL-06",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "FAIL",
+          "VAL-07": "SKIPPED",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "not_certified",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-06-modified-build",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-06-modified-build.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-06-modified-build.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-06"
+    },
+    {
+      "description": "S2 is absent (mandatory, §3.3).",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "malformed",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-s2-absent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-s2-absent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-s2-absent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3, §6.2 VAL-07"
+    },
+    {
+      "description": "The Tier 2 token is signed by a key other than its certified tier key.",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "bad_signature",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-wrong-key",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-wrong-key.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-wrong-key.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.2, §6.2 VAL-07"
+    },
+    {
+      "description": "The consumer authorized a different agent than S1 identifies.",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "wrong_binding",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-wrong-agent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-wrong-agent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-wrong-agent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.3, §6.2 VAL-07"
+    },
+    {
+      "description": "The Tier 1 authorization token is valid for more than 3600 s.",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "validity_too_long",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-too-long",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-too-long.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-too-long.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.3, §6.2 VAL-07"
+    },
+    {
+      "description": "The Tier 2 token is bound to Pacific Savings.",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "wrong_binding",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-wrong-institution",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-wrong-institution.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-wrong-institution.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.3, §6.2 VAL-07"
+    },
+    {
+      "description": "The tier key certificate is not signed by the issuing institution.",
+      "expected": {
+        "check": "VAL-07",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "FAIL",
+          "VAL-08": "SKIPPED",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "untrusted_key",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-07-certificate-not-from-issuer",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-07-certificate-not-from-issuer.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-07-certificate-not-from-issuer.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.2, §6.2 VAL-07"
+    },
+    {
+      "description": "INITIATE with only the Tier 1 discovery authorization.",
+      "expected": {
+        "check": "VAL-08",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "FAIL",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "scope",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-08-no-step-up",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-08-no-step-up.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-08-no-step-up.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.4, §6.2 VAL-08"
+    },
+    {
+      "description": "The Servicing Intent Package differs from the one the step-up signed.",
+      "expected": {
+        "check": "VAL-08",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "FAIL",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "wrong_binding",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-08-sip-tampered",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-08-sip-tampered.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-08-sip-tampered.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§5.8, §7.4, §6.2 VAL-08"
+    },
+    {
+      "description": "The requested product category (CHECKING) is outside the consumer's scope.",
+      "expected": {
+        "check": "VAL-08",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "FAIL",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "scope",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-08-product-out-of-scope",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-08-product-out-of-scope.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-08-product-out-of-scope.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": "CHECKING"
+      },
+      "schema_valid": true,
+      "spec": "§7.4, §6.2 VAL-08"
+    },
+    {
+      "description": "EXECUTE requested before PROCEED_TO_KYC.",
+      "expected": {
+        "check": "VAL-08",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "FAIL",
+          "VAL-08a": "SKIPPED",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "scope",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-08-execute-without-clearance",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-08-execute-without-clearance.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-08-execute-without-clearance.json",
+      "request": {
+        "action_class": "EXECUTE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.4, §6.2 VAL-08"
+    },
+    {
+      "description": "The Tier 1 key signs an INITIATE authorization; its EKU does not permit INITIATE.",
+      "expected": {
+        "check": "VAL-08a",
+        "checks": {
+          "REF-01": "SKIPPED",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "FAIL",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "scope",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-08a-tier1-key-signs-initiate",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-08a-tier1-key-signs-initiate.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-08a-tier1-key-signs-initiate.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§7.4, §6.2 VAL-08a"
+    },
+    {
+      "description": "S4 is absent (mandatory, §3.3).",
+      "expected": {
+        "check": "VAL-09",
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "FAIL",
+          "VAL-10": "PASS"
+        },
+        "code": "malformed",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-09-s4-absent",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-09-s4-absent.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-09-s4-absent.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3, §6.2 VAL-09"
+    },
+    {
+      "description": "S4 signals carry a raw data member (account_balance_usd); §8.1 permits derived signals only.",
+      "expected": {
+        "check": "VAL-09",
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "FAIL",
+          "VAL-10": "PASS"
+        },
+        "code": "malformed",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-09-raw-data-field",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-09-raw-data-field.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-09-raw-data-field.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": false,
+      "spec": "§8.1, §8.3, §6.2 VAL-09"
+    },
+    {
+      "description": "Differential privacy epsilon 4.0 exceeds the institution's maximum (1.0).",
+      "expected": {
+        "check": "VAL-09",
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "FAIL",
+          "VAL-10": "PASS"
+        },
+        "code": "scope",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-09-epsilon-too-large",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-09-epsilon-too-large.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-09-epsilon-too-large.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§8.2, §6.2 VAL-09"
+    },
+    {
+      "description": "S4 is signed by a key that is not the certified S4 provider's.",
+      "expected": {
+        "check": "VAL-09",
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "FAIL",
+          "VAL-10": "PASS"
+        },
+        "code": "untrusted_key",
+        "outcome": "PACKAGE_REJECTED",
+        "status": "FAIL"
+      },
+      "id": "val-09-wrong-key",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-09-wrong-key.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-09-wrong-key.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-09"
+    },
+    {
+      "description": "The S5 composite no longer matches its signature: logged, package accepted.",
+      "expected": {
+        "check": "VAL-10",
+        "checks": {
+          "REF-01": "PASS",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "WARN"
+        },
+        "code": "bad_signature",
+        "outcome": "ACCEPTED",
+        "status": "WARN"
+      },
+      "id": "val-10-composite-tampered",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/val-10-composite-tampered.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/val-10-composite-tampered.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§6.2 VAL-10"
+    },
+    {
+      "description": "S3 attests a different enrolled consumer: treated as absent, package accepted.",
+      "expected": {
+        "check": "REF-01",
+        "checks": {
+          "REF-01": "WARN",
+          "STRUCTURE": "PASS",
+          "VAL-01": "PASS",
+          "VAL-02": "PASS",
+          "VAL-03": "PASS",
+          "VAL-04": "PASS",
+          "VAL-04a": "PASS",
+          "VAL-05": "PASS",
+          "VAL-06": "PASS",
+          "VAL-07": "PASS",
+          "VAL-08": "PASS",
+          "VAL-08a": "PASS",
+          "VAL-09": "PASS",
+          "VAL-10": "PASS"
+        },
+        "code": "wrong_binding",
+        "outcome": "ACCEPTED",
+        "status": "WARN"
+      },
+      "id": "ref-01-s3-other-consumer",
+      "inputs": {
+        "administrator_key": "trust/keys/administrator.jwk.json",
+        "package": "packages/ref-01-s3-other-consumer.json",
+        "trust_list": "trust/trust-list.json"
+      },
+      "institution": "sunrise_digital_bank_afsp_001",
+      "now": "2026-08-18T14:24:15Z",
+      "now_unix": 1787063055,
+      "report": "reports/ref-01-s3-other-consumer.json",
+      "request": {
+        "action_class": "INITIATE",
+        "clearance_granted": false,
+        "product_category": null
+      },
+      "schema_valid": true,
+      "spec": "§3.3 (reference check REF-01)"
+    }
+  ],
+  "documents": [
+    {
+      "description": "Harbor Federal certifies Alice's Tier 1 key (READ, DISCOVER, PRESENT).",
+      "file": "documents/tier1-key-certificate.json",
+      "key": "trust/keys/harbor-federal.jwk.json",
+      "kind": "tier_key_certificate",
+      "schema": "tier-key-certificate.schema.json"
+    },
+    {
+      "description": "Harbor Federal certifies Alice's Tier 2 key (INITIATE).",
+      "file": "documents/tier2-key-certificate.json",
+      "key": "trust/keys/harbor-federal.jwk.json",
+      "kind": "tier_key_certificate",
+      "schema": "tier-key-certificate.schema.json"
+    },
+    {
+      "description": "S1: the agent registry attests the certified agent build.",
+      "file": "documents/s1-agent-provenance.json",
+      "key": "trust/keys/agent-registry.jwk.json",
+      "kind": "agent_provenance",
+      "schema": "s1-agent-provenance.schema.json"
+    },
+    {
+      "description": "S2: Tier 1 discovery authorization across NETWORK_MARKETPLACE (Appendix A.3).",
+      "file": "documents/tier1-authorization-token.json",
+      "key": "trust/keys/alice-tier1.jwk.json",
+      "kind": "consumer_authorization",
+      "schema": "consumer-authorization-token.schema.json"
+    },
+    {
+      "description": "S2: scope expansion to EXPANDED_SCOPE (§9.2).",
+      "file": "documents/scope-expansion-token.json",
+      "key": "trust/keys/alice-tier1.jwk.json",
+      "kind": "scope_expansion",
+      "schema": "scope-expansion-token.schema.json"
+    },
+    {
+      "description": "S2 envelope as held for the reverse inquiry (Tier 1 + scope expansion).",
+      "file": "documents/s2-discovery.json",
+      "key": null,
+      "kind": null,
+      "schema": "s2-signal.schema.json"
+    },
+    {
+      "description": "S3: Harbor Federal attests completed KYC.",
+      "file": "documents/s3-federated-referral.json",
+      "key": "trust/keys/harbor-federal.jwk.json",
+      "kind": "federated_referral",
+      "schema": "s3-federated-referral.schema.json"
+    },
+    {
+      "description": "S4: financial profile attestation (Appendix A.4).",
+      "file": "documents/s4-financial-profile.json",
+      "key": "trust/keys/s4-provider-001.jwk.json",
+      "kind": "financial_profile",
+      "schema": "s4-financial-profile.schema.json"
+    },
+    {
+      "description": "S5: provider 001 submission (§11.2).",
+      "file": "documents/s5-provider-001.json",
+      "key": "trust/keys/s5-provider-001.jwk.json",
+      "kind": "behavioral_score",
+      "schema": "s5-provider-score.schema.json"
+    },
+    {
+      "description": "S5: provider 002 submission (§11.2).",
+      "file": "documents/s5-provider-002.json",
+      "key": "trust/keys/s5-provider-002.jwk.json",
+      "kind": "behavioral_score",
+      "schema": "s5-provider-score.schema.json"
+    },
+    {
+      "description": "S5: the platform's composite, 0.6 x 0.91 + 0.4 x 0.87 (§11.3).",
+      "file": "documents/s5-composite.json",
+      "key": "trust/keys/platform.jwk.json",
+      "kind": "behavioral_composite",
+      "schema": "s5-composite.schema.json"
+    },
+    {
+      "description": "PCAA package held for the reverse inquiry (Appendix A.6).",
+      "file": "documents/package-unbound.json",
+      "key": "trust/keys/platform.jwk.json",
+      "kind": "package",
+      "schema": "pcaa-package.schema.json"
+    },
+    {
+      "description": "Reverse inquiry payload (§9.3).",
+      "file": "documents/reverse-inquiry.json",
+      "key": null,
+      "kind": null,
+      "schema": "reverse-inquiry.schema.json"
+    },
+    {
+      "description": "Sunrise Digital Bank's response to the reverse inquiry (§9.4).",
+      "file": "documents/institution-response.json",
+      "key": "trust/keys/sunrise-digital-bank.jwk.json",
+      "kind": "institution_response",
+      "schema": "institution-response.schema.json"
+    },
+    {
+      "description": "IVC-confirmed Servicing Intent Package (§5.8, Appendix A.8).",
+      "file": "documents/servicing-intent-package.json",
+      "key": null,
+      "kind": null,
+      "schema": "servicing-intent-package.schema.json"
+    },
+    {
+      "description": "S2: Tier 2 INITIATE step-up bound to Sunrise and the Servicing Intent Package.",
+      "file": "documents/tier2-authorization-token.json",
+      "key": "trust/keys/alice-tier2.jwk.json",
+      "kind": "consumer_authorization",
+      "schema": "consumer-authorization-token.schema.json"
+    },
+    {
+      "description": "S2 envelope at binding (adds the Tier 2 step-up and the Servicing Intent Package).",
+      "file": "documents/s2-signal.json",
+      "key": null,
+      "kind": null,
+      "schema": "s2-signal.schema.json"
+    },
+    {
+      "description": "PCAA package bound to Sunrise Digital Bank (Appendix A.8).",
+      "file": "documents/package-bound.json",
+      "key": "trust/keys/platform.jwk.json",
+      "kind": "package",
+      "schema": "pcaa-package.schema.json"
+    },
+    {
+      "description": "Sunrise's PROCEED_TO_KYC clearance response (§10.2, Appendix A.8).",
+      "file": "documents/clearance-response.json",
+      "key": "trust/keys/sunrise-digital-bank.jwk.json",
+      "kind": "clearance_response",
+      "schema": "clearance-response.schema.json"
+    },
+    {
+      "description": "AFSP session token (§10.3).",
+      "file": "documents/session-token.json",
+      "key": "trust/keys/platform.jwk.json",
+      "kind": "session_token",
+      "schema": "session-token.schema.json"
+    },
+    {
+      "description": "Audit record for the minted session token (§10.4).",
+      "file": "documents/audit-record.json",
+      "key": "trust/keys/platform.jwk.json",
+      "kind": "audit_record",
+      "schema": "audit-record.schema.json"
+    },
+    {
+      "description": "Return Trip confirmation: OPENED (§13.2, Appendix A.9).",
+      "file": "documents/return-trip.json",
+      "key": "trust/keys/sunrise-digital-bank.jwk.json",
+      "kind": "return_trip",
+      "schema": "return-trip.schema.json"
+    },
+    {
+      "description": "Participation Registry entry for Sunrise Digital Bank (§12.2).",
+      "file": "documents/registry-entry-sunrise.json",
+      "key": null,
+      "kind": null,
+      "schema": "registry-entry.schema.json"
+    },
+    {
+      "description": "The AFSP trust list (reference proposal), signed by the administrator.",
+      "file": "trust/trust-list.json",
+      "key": "trust/keys/administrator.jwk.json",
+      "kind": "trust_list",
+      "schema": "trust-list.schema.json"
+    }
+  ],
+  "generator": "afsp vectors generate",
+  "jcs": "jcs/manifest.json",
+  "policy": {
+    "accept_marketplace_authorization": true,
+    "max_clock_skew_s": 30,
+    "max_s4_epsilon": 1.0,
+    "min_s4_k_anonymity": 5,
+    "trust_list_max_stale_s": 86400
+  },
+  "scenario": "Appendix A: Alice, Sunrise Digital Bank, validated at 2026-08-18T14:24:15Z",
+  "signatures": "signatures/manifest.json",
+  "title": "AFSP v0.1 conformance vectors",
+  "trust": {
+    "administrator_key": "trust/keys/administrator.jwk.json",
+    "keys": [
+      {
+        "file": "trust/keys/administrator.jwk.json",
+        "kid": "afsp-administrator-2026",
+        "name": "administrator",
+        "thumbprint": "82Ep3RrX5RknHDskqqsYYjksjLmLFUAyTgsah-ouFnM"
+      },
+      {
+        "file": "trust/keys/platform.jwk.json",
+        "kid": "platform-2026-q3",
+        "name": "platform",
+        "thumbprint": "uJNC-Zs2HE8XHmpIdgOlyvIrXt993QdMTum1wXlJhBw"
+      },
+      {
+        "file": "trust/keys/agent-registry.jwk.json",
+        "kid": "agent-registry-2026-q3",
+        "name": "agent-registry",
+        "thumbprint": "GTmSgtXEM97OyqbE4i9C-5Ml9Pup4uy_lKIIwghX3n4"
+      },
+      {
+        "file": "trust/keys/s4-provider-001.jwk.json",
+        "kid": "s4-provider-001-2026",
+        "name": "s4-provider-001",
+        "thumbprint": "n-tsl5v_yDw3Ey0SJN12l1Gy4nAnfOTmr5jcRqeuZ4o"
+      },
+      {
+        "file": "trust/keys/s5-provider-001.jwk.json",
+        "kid": "s5_provider_signing_key_2026_q3",
+        "name": "s5-provider-001",
+        "thumbprint": "Fata1G2oJcQYbkaSGCmEB32Jh8uM5sWXa2tjKyt6eJU"
+      },
+      {
+        "file": "trust/keys/s5-provider-002.jwk.json",
+        "kid": "s5-provider-002-2026-q3",
+        "name": "s5-provider-002",
+        "thumbprint": "0Tx--I9agT47YtrxcHPqNrnucYAJUJnI3picSXHZiaI"
+      },
+      {
+        "file": "trust/keys/harbor-federal.jwk.json",
+        "kid": "harbor_federal_signing_key_2026",
+        "name": "harbor-federal",
+        "thumbprint": "DD9v3_7C7LzDa_AdbBQHn4AgnraKMeseytzEn-eQSsk"
+      },
+      {
+        "file": "trust/keys/sunrise-digital-bank.jwk.json",
+        "kid": "sunrise_digital_bank_signing_key_2026",
+        "name": "sunrise-digital-bank",
+        "thumbprint": "sgq5ekdnrP85evvMSgTSt5-gTTZroBd-_NBC7Uddpok"
+      },
+      {
+        "file": "trust/keys/pacific-savings.jwk.json",
+        "kid": "pacific_savings_signing_key_2026",
+        "name": "pacific-savings",
+        "thumbprint": "Z7h7_a_zzwzJknIQtImb10EpOxExhOCyjTSEFdE8PC8"
+      },
+      {
+        "file": "trust/keys/legacy-trust.jwk.json",
+        "kid": "legacy_trust_signing_key_2026",
+        "name": "legacy-trust",
+        "thumbprint": "r3E_FfyVSdwdWd2hTNC6TQfj505u3FfMYA3ltNBPL8U"
+      },
+      {
+        "file": "trust/keys/alice-device-root.jwk.json",
+        "kid": "alice-device-root",
+        "name": "alice-device-root",
+        "thumbprint": "pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE"
+      },
+      {
+        "file": "trust/keys/alice-tier1.jwk.json",
+        "kid": "alice-tier1",
+        "name": "alice-tier1",
+        "thumbprint": "bvXkP7JRczSUUV5ckjQsrKKLfC2xBBlfAQMWsTZAcvw"
+      },
+      {
+        "file": "trust/keys/alice-tier2.jwk.json",
+        "kid": "alice-tier2",
+        "name": "alice-tier2",
+        "thumbprint": "4g8dXHMAammmQMs_ulxrQeiJkm0hQUwrq8d288c9IoY"
+      },
+      {
+        "file": "trust/keys/alice-tier3.jwk.json",
+        "kid": "alice-tier3",
+        "name": "alice-tier3",
+        "thumbprint": "74YnJ5yGpop5PAfKfwXCZpTgMLQgbamcNvFcVKmZu9I"
+      }
+    ],
+    "max_stale_s": 86400,
+    "trust_list": "trust/trust-list.json"
+  }
+}

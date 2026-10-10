@@ -1,0 +1,25 @@
+{
+  "description": "The clearance decision changed (top-level institution_signature).",
+  "document": {
+    "clearance_decision": "DECLINE_SESSION",
+    "clearance_timestamp": "2026-08-18T14:24:15Z",
+    "institution_id": "sunrise_digital_bank_afsp_001",
+    "institution_signature": "MEQCIDATf4xRokkFLUgjBdpc2CUCVVZAGuHOdEBX69KxKKhaAiA9/LTk2/AQwXd6U/Ve4RokNMe/s90J9elVy7/QOIUf8w==",
+    "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b"
+  },
+  "expected": {
+    "code": "bad_signature",
+    "valid": false
+  },
+  "id": "tampered-clearance-response",
+  "kind": "clearance_response",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "sunrise_digital_bank_signing_key_2026",
+    "kty": "EC",
+    "x": "SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0",
+    "y": "Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU"
+  },
+  "signing_input": "{\"clearance_decision\":\"DECLINE_SESSION\",\"clearance_timestamp\":\"2026-08-18T14:24:15Z\",\"institution_id\":\"sunrise_digital_bank_afsp_001\",\"package_id\":\"pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b\"}",
+  "signing_input_sha256": "sha256:1dd29f6e5f50490ae3a31497276bb5ef323c41e568edd0648e7bd5c47441a183"
+}

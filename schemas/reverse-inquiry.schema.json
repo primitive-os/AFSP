@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/reverse-inquiry.schema.json",
+  "title": "Reverse inquiry payload",
+  "description": "The anonymous structured product inquiry transmitted to participating institutions (§9.3). It carries the S4 attestation and preferences, never identity (§9.1).",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "inquiry_id": {
+      "type": "string",
+      "pattern": "^inq_[0-9a-f]{32,}$",
+      "description": "256-bit unique inquiry identifier."
+    },
+    "inquiry_timestamp": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "authorization_token_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref"
+    },
+    "participation_state": {
+      "$ref": "common.schema.json#/$defs/participation_state"
+    },
+    "product_request": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/product_category"
+          },
+          "minItems": 1
+        },
+        "geographic_constraints": {},
+        "preferred_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Reference proposal: features for the §9.5 Jaccard term."
+        }
+      },
+      "required": [
+        "categories"
+      ]
+    },
+    "consumer_profile_attestation": {
+      "$ref": "s4-financial-profile.schema.json"
+    },
+    "consumer_preference_weights": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/preference_weights"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "consumer_identity_included": {
+      "const": false,
+      "description": "Always false (§9.1)."
+    }
+  },
+  "required": [
+    "inquiry_id",
+    "inquiry_timestamp",
+    "authorization_token_hash",
+    "participation_state",
+    "product_request",
+    "consumer_profile_attestation",
+    "consumer_identity_included"
+  ]
+}

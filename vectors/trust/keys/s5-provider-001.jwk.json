@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "s5_provider_signing_key_2026_q3",
+  "kty": "EC",
+  "x": "_3ImQ_jWE63SdKcftX50Eg4qhoTzWLHDZzUv4pxqNcA",
+  "y": "iXtkeaFQHuChZGtrNR4mIjLqBBIMX1nPIZULx5E0XG0"
+}

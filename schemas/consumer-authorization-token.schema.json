@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/consumer-authorization-token.schema.json",
+  "title": "Consumer authorization token",
+  "description": "The consumer authorization token generated in the TEE on biometric authentication (§7.3), carried in S2 (VAL-07, VAL-08). The top-level `signature` is over the canonical token without it. servicing_intent_hash (reference proposal) binds INITIATE and EXECUTE authorizations to the IVC-confirmed Servicing Intent Package (§5.8, §7.4 Layer 3).",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "token_type": {
+      "const": "AFSP_CONSUMER_AUTH"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "consumer_device_id": {
+      "type": "string",
+      "description": "Enrolled device identifier."
+    },
+    "biometric_event": {
+      "$ref": "common.schema.json#/$defs/biometric_event"
+    },
+    "authorized_agent_id": {
+      "type": "string",
+      "description": "Agent identifier from the AFSP agent registry; must match S1."
+    },
+    "receiving_institution_id": {
+      "type": "string",
+      "description": "The bound institution, or NETWORK_MARKETPLACE for a Tier 1 discovery authorization across the network (Appendix A.3)."
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "action_classes": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/action_class"
+          },
+          "minItems": 1
+        },
+        "product_categories": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/product_category"
+          },
+          "minItems": 1
+        },
+        "geographic_constraints": {
+          "description": "Optional state/region codes."
+        },
+        "consumer_preference_weights": {
+          "$ref": "common.schema.json#/$defs/preference_weights"
+        }
+      },
+      "required": [
+        "action_classes",
+        "product_categories"
+      ],
+      "description": "Consumer-defined scope (§7.3, §7.4 Layer 2)."
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/validity",
+      "description": "At most 3600 s (§7.3)."
+    },
+    "scope_expansion": {
+      "type": "object",
+      "description": "Scope expansion parameters (§7.3, §9.2)."
+    },
+    "servicing_intent_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref",
+      "description": "Reference proposal: SHA-256 of the canonical, IVC-confirmed Servicing Intent Package."
+    },
+    "signature": {
+      "$ref": "common.schema.json#/$defs/signature_value"
+    }
+  },
+  "required": [
+    "token_type",
+    "version",
+    "consumer_device_id",
+    "biometric_event",
+    "authorized_agent_id",
+    "receiving_institution_id",
+    "scope",
+    "temporal_validity",
+    "signature"
+  ]
+}

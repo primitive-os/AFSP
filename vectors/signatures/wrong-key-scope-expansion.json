@@ -1,0 +1,36 @@
+{
+  "description": "A scope expansion token verified with the Tier 2 key.",
+  "document": {
+    "authorization_token_hash": "sha256:c068af08f32c622a3d488553244444af4641cd0b1c66ca16496032c62bf13227",
+    "biometric_event": {
+      "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+      "timestamp": "2026-08-18T14:23:08Z",
+      "type": "FIDO2_BIOMETRIC"
+    },
+    "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+    "participation_state": "EXPANDED_SCOPE",
+    "session_id": "sess_2e4f6a8c0b2d4f6a",
+    "signature": "MEQCIClUkfmTdiu9q7cdaQq2hB9MP8S6WXYo4AEUYIdhEyF5AiAF8PIEa0JbasSzMtetcvDHygLfGyjxzq9BEiHNSnmkAg==",
+    "temporal_validity": {
+      "not_after": "2026-08-18T15:23:08Z",
+      "not_before": "2026-08-18T14:23:08Z"
+    },
+    "token_type": "AFSP_SCOPE_EXPANSION",
+    "version": "0.1"
+  },
+  "expected": {
+    "code": "bad_signature",
+    "valid": false
+  },
+  "id": "wrong-key-scope-expansion",
+  "kind": "scope_expansion",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "alice-tier2",
+    "kty": "EC",
+    "x": "RMDBxWeWgH7coPwlrf4f1sx8DkOuAnmFog7Zs5rR4PM",
+    "y": "N9ZZq_50HuLd7Fok5ZyJZadRmTA1LGAKiN-EK5WmNuk"
+  },
+  "signing_input": "{\"authorization_token_hash\":\"sha256:c068af08f32c622a3d488553244444af4641cd0b1c66ca16496032c62bf13227\",\"biometric_event\":{\"tee_attestation\":\"eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln\",\"timestamp\":\"2026-08-18T14:23:08Z\",\"type\":\"FIDO2_BIOMETRIC\"},\"consumer_device_id\":\"dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c\",\"participation_state\":\"EXPANDED_SCOPE\",\"session_id\":\"sess_2e4f6a8c0b2d4f6a\",\"temporal_validity\":{\"not_after\":\"2026-08-18T15:23:08Z\",\"not_before\":\"2026-08-18T14:23:08Z\"},\"token_type\":\"AFSP_SCOPE_EXPANSION\",\"version\":\"0.1\"}",
+  "signing_input_sha256": "sha256:f44cae05cbd0245810765149994b4aff9822c1ec5f2517c61dbf1cdde1940e8d"
+}

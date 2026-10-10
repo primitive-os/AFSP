@@ -1,0 +1,3 @@
+# Canonical JSON and signing inputs are compared byte for byte.
+* text eol=lf
+jcs/** -text

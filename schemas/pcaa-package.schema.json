@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/pcaa-package.schema.json",
+  "title": "PCAA attestation package",
+  "description": "The signed PCAA package the AFSP platform delivers to the receiving institution (§6.1), validated by VAL-01 to VAL-10 (§6.2). Before binding (Appendix A.6) the package carries no institution nonce; binding adds receiving_institution_id, institution_nonce, nonce_bound_institution and nonce_expiry (§6.1, §10.2 Step 2). Whether signals_present matches the signals carried, and the 3600 s / 1800 s limits, are checked by the verifier, not this schema.",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "afsp_version": {
+      "const": "0.1"
+    },
+    "package_id": {
+      "$ref": "common.schema.json#/$defs/package_id"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "assembly_timestamp": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "receiving_institution_id": {
+      "type": "string",
+      "description": "Institution identifier from the Participation Registry (VAL-02)."
+    },
+    "institution_nonce": {
+      "$ref": "common.schema.json#/$defs/hex_nonce_256",
+      "description": "Institution-bound session nonce, added at binding (VAL-04a)."
+    },
+    "nonce_bound_institution": {
+      "$ref": "common.schema.json#/$defs/jwk_thumbprint",
+      "description": "Hash of the receiving institution's registered public key; reference proposal: its RFC 7638 thumbprint."
+    },
+    "nonce_expiry": {
+      "$ref": "common.schema.json#/$defs/timestamp",
+      "description": "At most 1800 s after assembly_timestamp (§6.1)."
+    },
+    "routing_destination": {
+      "type": "string",
+      "description": "Set on an unbound package held for the reverse inquiry (Appendix A.6), e.g. AFSP_MARKETPLACE_REVERSE_INQUIRY."
+    },
+    "validity_window": {
+      "$ref": "common.schema.json#/$defs/validity",
+      "description": "not_after at most 3600 s after not_before (§6.1, VAL-03)."
+    },
+    "signals": {
+      "type": "object",
+      "description": "The five independently sourced trust signals (§6.1). S1, S2 and S4 are mandatory, S5 conditional and S3 optional (§3.3); an absent mandatory signal rejects the package at VAL-05, VAL-07 or VAL-09 rather than failing structure. S1 and S2 may arrive in another credential format named by a `format` member (e.g. AFSP-CREDENTIALS, reference proposals P5 and P6).",
+      "properties": {
+        "S1": {
+          "if": {
+            "required": [
+              "format"
+            ],
+            "properties": {
+              "format": {
+                "not": {
+                  "const": "AFSP"
+                }
+              }
+            }
+          },
+          "then": {
+            "type": "object"
+          },
+          "else": {
+            "$ref": "s1-agent-provenance.schema.json"
+          }
+        },
+        "S2": {
+          "if": {
+            "required": [
+              "format"
+            ],
+            "properties": {
+              "format": {
+                "not": {
+                  "const": "AFSP"
+                }
+              }
+            }
+          },
+          "then": {
+            "type": "object"
+          },
+          "else": {
+            "$ref": "s2-signal.schema.json"
+          }
+        },
+        "S3": {
+          "$ref": "s3-federated-referral.schema.json"
+        },
+        "S4": {
+          "$ref": "s4-financial-profile.schema.json"
+        },
+        "S5": {
+          "description": "The platform's signed composite (§11.3) or a single certified provider's submission (§11.2).",
+          "if": {
+            "required": [
+              "score_type"
+            ],
+            "properties": {
+              "score_type": {
+                "const": "COMPOSITE"
+              }
+            }
+          },
+          "then": {
+            "$ref": "s5-composite.schema.json"
+          },
+          "else": {
+            "$ref": "s5-provider-score.schema.json"
+          }
+        }
+      }
+    },
+    "signals_present": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/signal_id"
+      },
+      "uniqueItems": true,
+      "description": "The signals carried, in order (§6.1)."
+    },
+    "platform_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block",
+      "description": "Platform signature (§6.1): signed_by is platform.afsp.org."
+    }
+  },
+  "required": [
+    "afsp_version",
+    "package_id",
+    "session_id",
+    "assembly_timestamp",
+    "validity_window",
+    "signals",
+    "signals_present",
+    "platform_signature"
+  ],
+  "dependentRequired": {
+    "institution_nonce": [
+      "receiving_institution_id",
+      "nonce_bound_institution",
+      "nonce_expiry"
+    ]
+  }
+}

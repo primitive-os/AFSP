@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s3-federated-referral.schema.json",
+  "title": "S3 federated referral attestation",
+  "description": "Signal 3 (optional, §3.3): a regulated network institution attests it completed KYC on this consumer (§1.3 Principle 2). It carries no identity data and binds to the consumer's enrolled root key. v0.1 defines no VAL requirement; the reference verifier reports REF-01 and treats a failing S3 as absent. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "attestation_type": {
+      "const": "AFSP_FEDERATED_REFERRAL"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "referral_id": {
+      "type": "string"
+    },
+    "referring_institution_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "consumer_device_id": {
+          "type": "string"
+        },
+        "root_key_thumbprint": {
+          "$ref": "common.schema.json#/$defs/jwk_thumbprint"
+        }
+      },
+      "required": [
+        "consumer_device_id",
+        "root_key_thumbprint"
+      ]
+    },
+    "kyc": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "VERIFIED"
+        },
+        "verified_on": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}$",
+          "description": "Month precision (YYYY-MM)."
+        },
+        "program": {
+          "type": "string",
+          "description": "e.g. CIP_STANDARD, CIP_ENHANCED."
+        }
+      },
+      "required": [
+        "status",
+        "verified_on",
+        "program"
+      ]
+    },
+    "relationship": {
+      "type": "object"
+    },
+    "issued_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "not_after": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "institution_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "attestation_type",
+    "version",
+    "referral_id",
+    "referring_institution_id",
+    "session_id",
+    "subject",
+    "kyc",
+    "issued_at",
+    "not_after",
+    "institution_signature"
+  ]
+}

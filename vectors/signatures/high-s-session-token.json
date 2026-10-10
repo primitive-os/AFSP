@@ -1,0 +1,41 @@
+{
+  "description": "The same signature with s replaced by n - s (high-S), DER. Mathematically valid ECDSA; rejected because P2 requires low-S.",
+  "document": {
+    "institution_clearance": {
+      "clearance_decision": "PROCEED_TO_KYC",
+      "clearance_timestamp": "2026-08-18T14:24:15Z",
+      "institution_id": "sunrise_digital_bank_afsp_001",
+      "institution_signature": "MEQCIDATf4xRokkFLUgjBdpc2CUCVVZAGuHOdEBX69KxKKhaAiA9/LTk2/AQwXd6U/Ve4RokNMe/s90J9elVy7/QOIUf8w=="
+    },
+    "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+    "platform_signature": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEYCIQDf2SllDUqBQV7Ml6uagaQL0e5kYMzWy21AbbDudH32vgIhAL35qyZnZWbPn8EHlYVzqglQ4n1T+pqtK7REKccg8jCd",
+      "signed_by": "platform.afsp.org"
+    },
+    "session_id": "sess_2e4f6a8c0b2d4f6a",
+    "token_id": "stk_5f883ce0ca9fe74866a6d99ae2bf94d6b3160d0ccfcf10645093d949349de14f",
+    "token_type": "AFSP_SESSION",
+    "validity": {
+      "not_after": "2026-08-18T14:54:15Z",
+      "not_before": "2026-08-18T14:24:15Z",
+      "single_use": true
+    },
+    "version": "0.1"
+  },
+  "expected": {
+    "code": "bad_signature",
+    "valid": false
+  },
+  "id": "high-s-session-token",
+  "kind": "session_token",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "platform-2026-q3",
+    "kty": "EC",
+    "x": "J2I4txD-jBUZSC602hBte9hOE5ie0keV_4jO9sT3xmA",
+    "y": "UHon5nxqt_qq4caPEzMjTewrcYTuRqy07TnB2zxQgjQ"
+  },
+  "signing_input": "{\"institution_clearance\":{\"clearance_decision\":\"PROCEED_TO_KYC\",\"clearance_timestamp\":\"2026-08-18T14:24:15Z\",\"institution_id\":\"sunrise_digital_bank_afsp_001\",\"institution_signature\":\"MEQCIDATf4xRokkFLUgjBdpc2CUCVVZAGuHOdEBX69KxKKhaAiA9/LTk2/AQwXd6U/Ve4RokNMe/s90J9elVy7/QOIUf8w==\"},\"package_id\":\"pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b\",\"platform_signature\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"platform.afsp.org\"},\"session_id\":\"sess_2e4f6a8c0b2d4f6a\",\"token_id\":\"stk_5f883ce0ca9fe74866a6d99ae2bf94d6b3160d0ccfcf10645093d949349de14f\",\"token_type\":\"AFSP_SESSION\",\"validity\":{\"not_after\":\"2026-08-18T14:54:15Z\",\"not_before\":\"2026-08-18T14:24:15Z\",\"single_use\":true},\"version\":\"0.1\"}",
+  "signing_input_sha256": "sha256:c8ce13b6bc9533703400ecd34b2d893f92bc8345c05d449a24c4fa9a05c3aea4"
+}

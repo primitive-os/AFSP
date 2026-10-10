@@ -1,0 +1,43 @@
+{
+  "inquiry_id": "inq_9d4f082d6a330f2b5f89e1b706f268ca10efd3a624671a8363df0cc5716f422e",
+  "institution_id": "sunrise_digital_bank_afsp_001",
+  "institution_signature": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEUCIQCkS8jgwUognpLcPTxUQ6DN6qt7VP8qjZD5rhEcDKPmxAIgV9XKGA5PGeAF12y2UoMjuGppf1fqenRItB1mowBhWZo=",
+    "signed_with": "sunrise_digital_bank_signing_key_2026"
+  },
+  "product_offers": [
+    {
+      "annual_percentage_yield": 5.1,
+      "approval_probability_signal": "HIGH",
+      "apy_accurate_as_of": "2026-08-18",
+      "deposit_insurer": "FDIC",
+      "eligibility_confirmation": "ELIGIBLE",
+      "feature_set": [
+        "MOBILE_DEPOSIT",
+        "ATM_NETWORK_ACCESS",
+        "ZELLE"
+      ],
+      "fee_schedule": [
+        {
+          "fee_amount": 0.0,
+          "fee_frequency": "MONTHLY",
+          "fee_type": "MONTHLY_MAINTENANCE"
+        },
+        {
+          "fee_amount": 15.0,
+          "fee_frequency": "PER_TRANSACTION",
+          "fee_type": "WIRE_TRANSFER",
+          "waiver_conditions": "Waived for balances above $10,000."
+        }
+      ],
+      "institution_legal_name": "Sunrise Digital Bank, N.A.",
+      "minimum_balance_requirement": 100.0,
+      "minimum_opening_deposit": 0.0,
+      "offer_id": "off_sunrise_hysa_0818",
+      "product_category": "SAVINGS",
+      "rate_type": "VARIABLE"
+    }
+  ],
+  "response_timestamp": "2026-08-18T14:23:10Z"
+}

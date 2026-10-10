@@ -1,0 +1,38 @@
+{
+  "description": "S5: provider 002 submission (§11.2). Signed by s5-provider-002.",
+  "document": {
+    "active_challenge_response_used": false,
+    "attestation": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEUCIQCherizsWUWZPup/RXxju+7SOie8REsOzk4JDdqK9Pd7gIgLd3Lf8VRv5EpwYH5F0sJUNpF4LNA4uo6aLtMwBCVbuo=",
+      "signed_by": "s5-provider-002-2026-q3",
+      "statement": "Score derived exclusively from passive behavioral observation."
+    },
+    "collection_duration_ms": 4200,
+    "provider_id": "certified_s5_provider_002",
+    "score": {
+      "normalized_score": 0.87,
+      "raw_score": 0.87
+    },
+    "session_correlation_id": "sess_2e4f6a8c0b2d4f6a",
+    "signal_types_contributing": [
+      "TOUCH_PATTERNS",
+      "NAVIGATION_TIMING"
+    ]
+  },
+  "expected": {
+    "code": null,
+    "valid": true
+  },
+  "id": "valid-s5-provider-002",
+  "kind": "behavioral_score",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "s5-provider-002-2026-q3",
+    "kty": "EC",
+    "x": "rT9gpUb4KAcW82oHsl5T6TeWoP7tnnC2hd2_GvoTE_A",
+    "y": "Aer60b4ado26du_XGKlPhTGu5vZ6Ky3riwh2x8OvwH4"
+  },
+  "signing_input": "{\"active_challenge_response_used\":false,\"attestation\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"s5-provider-002-2026-q3\",\"statement\":\"Score derived exclusively from passive behavioral observation.\"},\"collection_duration_ms\":4200,\"provider_id\":\"certified_s5_provider_002\",\"score\":{\"normalized_score\":0.87,\"raw_score\":0.87},\"session_correlation_id\":\"sess_2e4f6a8c0b2d4f6a\",\"signal_types_contributing\":[\"TOUCH_PATTERNS\",\"NAVIGATION_TIMING\"]}",
+  "signing_input_sha256": "sha256:706ab5e1151b009fdaa564e8abc15d90e071c5904fab0a3ea5d34084d55204de"
+}

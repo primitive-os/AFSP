@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/validation-report.schema.json",
+  "title": "Package validation report",
+  "description": "What the reference verifier reports for a PCAA package (§6.2): the outcome, every check that ran with its status and stable error code, and summaries of the verified signals. Outcomes follow §6.2 failure handling: SESSION_TERMINATED for package-level checks (STRUCTURE, VAL-04a, VAL-01 to VAL-04), PACKAGE_REJECTED for mandatory signals (VAL-05 to VAL-09, VAL-08a); VAL-10 and REF-01 failures are WARN and do not reject. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "outcome": {
+      "enum": [
+        "ACCEPTED",
+        "PACKAGE_REJECTED",
+        "SESSION_TERMINATED"
+      ]
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "STRUCTURE",
+              "VAL-04a",
+              "VAL-01",
+              "VAL-02",
+              "VAL-03",
+              "VAL-04",
+              "VAL-05",
+              "VAL-06",
+              "VAL-07",
+              "VAL-08",
+              "VAL-08a",
+              "REF-01",
+              "VAL-09",
+              "VAL-10"
+            ]
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "WARN",
+              "SKIPPED"
+            ]
+          },
+          "code": {
+            "enum": [
+              "malformed",
+              "invalid_argument",
+              "bad_signature",
+              "untrusted_key",
+              "not_yet_valid",
+              "expired",
+              "validity_too_long",
+              "replay",
+              "wrong_binding",
+              "scope",
+              "not_certified",
+              "state",
+              "host"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status"
+        ]
+      }
+    },
+    "signals_present": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/signal_id"
+      }
+    },
+    "signals_verified": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/signal_id"
+      }
+    },
+    "agent": {
+      "type": "object",
+      "properties": {
+        "agent_id": {
+          "type": "string"
+        },
+        "operator_id": {
+          "type": "string"
+        },
+        "build_hash": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "agent_id",
+        "operator_id",
+        "build_hash",
+        "format"
+      ]
+    },
+    "consumer": {
+      "type": "object",
+      "properties": {
+        "consumer_device_id": {
+          "type": "string"
+        },
+        "root_key_thumbprint": {
+          "type": "string"
+        },
+        "issuing_institution_id": {
+          "type": "string"
+        },
+        "authorizing_tier": {
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "action_classes": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/action_class"
+          }
+        },
+        "product_categories": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/product_category"
+          }
+        },
+        "participation_state": {
+          "$ref": "common.schema.json#/$defs/participation_state"
+        },
+        "authorization_token_hash": {
+          "$ref": "common.schema.json#/$defs/sha256_ref"
+        },
+        "servicing_intent": {
+          "$ref": "servicing-intent-package.schema.json"
+        },
+        "format": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "consumer_device_id",
+        "root_key_thumbprint",
+        "issuing_institution_id",
+        "authorizing_tier",
+        "action_classes",
+        "product_categories",
+        "participation_state",
+        "authorization_token_hash",
+        "format"
+      ]
+    },
+    "referral": {
+      "type": "object",
+      "properties": {
+        "referring_institution_id": {
+          "type": "string"
+        },
+        "kyc_program": {
+          "type": "string"
+        },
+        "kyc_verified_on": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "referring_institution_id",
+        "kyc_program",
+        "kyc_verified_on"
+      ]
+    },
+    "financial_profile": {
+      "type": "object",
+      "properties": {
+        "attestation_provider": {
+          "type": "string"
+        },
+        "signals": {
+          "$ref": "s4-financial-profile.schema.json#/properties/signals"
+        },
+        "behavioral_consistency_score": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "markers_evaluated": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "attestation_provider",
+        "signals",
+        "behavioral_consistency_score",
+        "markers_evaluated"
+      ]
+    },
+    "behavioral": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "form": {
+          "enum": [
+            "COMPOSITE",
+            "PROVIDER"
+          ]
+        },
+        "signal_types_contributing": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/s5_signal_type"
+          }
+        },
+        "ecl": {
+          "$ref": "s5-composite.schema.json#/properties/ecl"
+        }
+      },
+      "required": [
+        "score",
+        "form",
+        "signal_types_contributing"
+      ]
+    },
+    "valid_until": {
+      "$ref": "common.schema.json#/$defs/timestamp",
+      "description": "The earlier of validity_window.not_after and nonce_expiry (§6.1)."
+    }
+  },
+  "required": [
+    "outcome",
+    "checks",
+    "signals_present",
+    "signals_verified"
+  ]
+}

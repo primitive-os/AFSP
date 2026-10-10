@@ -1,0 +1,136 @@
+{
+  "behavioral": {
+    "ecl": {
+      "evaluated": true,
+      "geographic_risk_tier": 1,
+      "out_of_band_required": false,
+      "step_up_required": false
+    },
+    "form": "COMPOSITE",
+    "score": 0.894,
+    "signal_types_contributing": [
+      "TOUCH_PATTERNS",
+      "DEVICE_MOTION",
+      "NAVIGATION_TIMING",
+      "DEVICE_HARDWARE"
+    ]
+  },
+  "checks": [
+    {
+      "id": "STRUCTURE",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-04a",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-01",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-02",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-03",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-04",
+      "status": "PASS"
+    },
+    {
+      "code": "malformed",
+      "detail": "S1 is absent; S1 is mandatory (§3.3)",
+      "id": "VAL-05",
+      "status": "FAIL"
+    },
+    {
+      "detail": "S1 absent",
+      "id": "VAL-06",
+      "status": "SKIPPED"
+    },
+    {
+      "detail": "S2 binds to the S1 agent, which did not verify",
+      "id": "VAL-07",
+      "status": "SKIPPED"
+    },
+    {
+      "detail": "S2 binds to the S1 agent, which did not verify",
+      "id": "VAL-08",
+      "status": "SKIPPED"
+    },
+    {
+      "detail": "S2 binds to the S1 agent, which did not verify",
+      "id": "VAL-08a",
+      "status": "SKIPPED"
+    },
+    {
+      "detail": "S3 binds to the S2 consumer, which did not verify",
+      "id": "REF-01",
+      "status": "SKIPPED"
+    },
+    {
+      "id": "VAL-09",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-10",
+      "status": "PASS"
+    }
+  ],
+  "financial_profile": {
+    "attestation_provider": "certified_s4_provider_001",
+    "behavioral_consistency_score": 0.89,
+    "markers_evaluated": 5,
+    "signals": {
+      "account_longevity": {
+        "confidence": 0.94,
+        "value": "MATURE"
+      },
+      "balance_range": {
+        "confidence": 0.88,
+        "value": "MID_HIGH"
+      },
+      "income_stability": {
+        "confidence": 0.93,
+        "frequency_component": 0.97,
+        "magnitude_component": 0.91,
+        "regularity_component": 0.95,
+        "value": "HIGHLY_CONSISTENT"
+      },
+      "product_eligibility": {
+        "categories_indicated": [
+          "SAVINGS",
+          "MMA"
+        ],
+        "confidence": 0.95,
+        "minimum_balance_compatible": true
+      },
+      "relationship_breadth": {
+        "confidence": 0.86,
+        "value": "MODERATE"
+      },
+      "transaction_regularity": {
+        "behavioral_category": "SAVER",
+        "confidence": 0.91,
+        "value": "HIGHLY_REGULAR"
+      }
+    }
+  },
+  "outcome": "PACKAGE_REJECTED",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals_present": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "signals_verified": [
+    "S4",
+    "S5"
+  ],
+  "valid_until": "2026-08-18T14:53:09Z"
+}

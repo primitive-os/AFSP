@@ -1,0 +1,141 @@
+{
+  "agent": {
+    "agent_id": "agt_aip_assistant_20260801_prod",
+    "build_hash": "sha256:4c810230ff7189ac2d6f8d8727be1da15cbbfdb3eef357710d95e3c998dc5da0",
+    "format": "AFSP",
+    "operator_id": "clo_ai_platform_001"
+  },
+  "behavioral": {
+    "ecl": {
+      "evaluated": true,
+      "geographic_risk_tier": 1,
+      "out_of_band_required": false,
+      "step_up_required": false
+    },
+    "form": "COMPOSITE",
+    "score": 0.894,
+    "signal_types_contributing": [
+      "TOUCH_PATTERNS",
+      "DEVICE_MOTION",
+      "NAVIGATION_TIMING",
+      "DEVICE_HARDWARE"
+    ]
+  },
+  "checks": [
+    {
+      "id": "STRUCTURE",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-04a",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-01",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-02",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-03",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-04",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-05",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-06",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-07",
+      "status": "PASS"
+    },
+    {
+      "code": "scope",
+      "detail": "no consumer authorization in S2 permits INITIATE here",
+      "id": "VAL-08",
+      "status": "FAIL"
+    },
+    {
+      "detail": "an earlier check for this signal failed",
+      "id": "VAL-08a",
+      "status": "SKIPPED"
+    },
+    {
+      "detail": "S3 binds to the S2 consumer, which did not verify",
+      "id": "REF-01",
+      "status": "SKIPPED"
+    },
+    {
+      "id": "VAL-09",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-10",
+      "status": "PASS"
+    }
+  ],
+  "financial_profile": {
+    "attestation_provider": "certified_s4_provider_001",
+    "behavioral_consistency_score": 0.89,
+    "markers_evaluated": 5,
+    "signals": {
+      "account_longevity": {
+        "confidence": 0.94,
+        "value": "MATURE"
+      },
+      "balance_range": {
+        "confidence": 0.88,
+        "value": "MID_HIGH"
+      },
+      "income_stability": {
+        "confidence": 0.93,
+        "frequency_component": 0.97,
+        "magnitude_component": 0.91,
+        "regularity_component": 0.95,
+        "value": "HIGHLY_CONSISTENT"
+      },
+      "product_eligibility": {
+        "categories_indicated": [
+          "SAVINGS",
+          "MMA"
+        ],
+        "confidence": 0.95,
+        "minimum_balance_compatible": true
+      },
+      "relationship_breadth": {
+        "confidence": 0.86,
+        "value": "MODERATE"
+      },
+      "transaction_regularity": {
+        "behavioral_category": "SAVER",
+        "confidence": 0.91,
+        "value": "HIGHLY_REGULAR"
+      }
+    }
+  },
+  "outcome": "PACKAGE_REJECTED",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals_present": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "signals_verified": [
+    "S1",
+    "S4",
+    "S5"
+  ],
+  "valid_until": "2026-08-18T14:53:09Z"
+}

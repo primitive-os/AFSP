@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "alice-device-root",
+  "kty": "EC",
+  "x": "xzuLQHqI5o1qo9E9UgAeajDSI2pMHIdWS6FIlSfDoNs",
+  "y": "zCAdkSO9Lq1zu4uokUEBM9SXzvwnbWSl_o842y7dC8Y"
+}

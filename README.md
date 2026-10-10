@@ -44,13 +44,17 @@ AFSP does not make credit, fraud, KYC or servicing decisions. Those controls sta
 - **Become a Founding Endorser.** This requires a written letter of endorsement and a commitment to participate in the Technical Working Group; no production implementation is required. Contact [afsp@primitive.com](mailto:afsp@primitive.com). Founding Endorsers will be announced ahead of the November 16, 2026 comment deadline.
 - **Prototype against it.** The [specification](spec/AFSP-v0.1-Public-Review-Draft.pdf) and its worked example (Appendix A) are public. Production implementations require AFSP certification, and patent claims essential to implementing AFSP are licensed on FRAND terms (see [License and intellectual property](#license-and-intellectual-property)).
 
+## Schemas and conformance vectors
+
+To help implementers prototype against v0.1, this repository also publishes JSON Schemas for every AFSP document in [schemas/](schemas), and language-neutral conformance vectors in [vectors/](vectors). The vectors cover the Appendix A session plus one package per failure mode of every validation requirement, VAL-01 to VAL-10. Formats that v0.1 leaves to the Technical Working Group (§18) are marked as reference proposals and are not normative. Both directories are part of the Specification and are covered by its [license](LICENSE).
+
 ## Extending AFSP
 
 Any organization may propose an extension: a minor extension (Type 1), a major extension (Type 2) or an implementation profile (Type 3). [Open an extension proposal](https://github.com/primitive-os/AFSP/issues/new?template=extension-proposal.yml). See [CONTRIBUTING.md](CONTRIBUTING.md) for what to include and how proposals are reviewed.
 
 ## Governance
 
-AFSP v0.1 is published and governed by Primitive as founding author and interim protocol administrator. Founding Endorsers have standing participation in the AFSP Technical Working Group, which is open to all organizations with a bona fide interest. Governance will transfer to the AFSP Foundation, an independent non-profit targeted for formation in early 2027, with final timing set by the independent entity itself. See the [working group charter](CHARTER.md).
+AFSP v0.1 is published and governed by CiDR Technologies, Inc. D/B/A Primitive ("Primitive") as founding author and interim protocol administrator. Founding Endorsers have standing participation in the AFSP Technical Working Group, which is open to all organizations with a bona fide interest. Governance will transfer to the AFSP Foundation, an independent non-profit targeted for formation in early 2027, with final timing set by the independent entity itself. See the [working group charter](CHARTER.md).
 
 ## License and intellectual property
 
@@ -63,3 +67,5 @@ AFSP certification, the certification mark and inclusion in the Participation Re
 ## Contact
 
 [afsp@primitive.com](mailto:afsp@primitive.com) · [agenticfinanceprotocol.org](https://agenticfinanceprotocol.org)
+
+Copyright © 2026 CiDR Technologies, Inc. D/B/A Primitive. All rights reserved except as stated in [LICENSE](LICENSE).

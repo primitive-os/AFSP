@@ -1,0 +1,24 @@
+{
+  "action_class": "INITIATE",
+  "action_type": "ACCOUNT_OPENING",
+  "afsp_version": "0.1",
+  "amount": null,
+  "authorization_tier": "Authorization Tier 2 (INITIATE)",
+  "currency": "USD",
+  "generated_from_structured_fields": true,
+  "ivc_confirmation_timestamp": "2026-08-18T14:24:12Z",
+  "ivc_confirmed": true,
+  "ivc_display_text": "Open a High-Yield Savings Account at Sunrise Digital Bank? APY 5.10%, no monthly fee, $100 minimum balance, FDIC-insured.",
+  "package_type": "SERVICING_INTENT_PACKAGE",
+  "product": "High-Yield Savings Account",
+  "product_terms": {
+    "apy": "5.10%",
+    "deposit_insurer": "FDIC",
+    "minimum_balance": "100.00",
+    "monthly_fee": "0.00"
+  },
+  "receiving_institution": "Sunrise Digital Bank",
+  "receiving_institution_id": "sunrise_digital_bank_afsp_001",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "timing": "immediate"
+}

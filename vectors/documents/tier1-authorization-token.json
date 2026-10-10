@@ -1,0 +1,39 @@
+{
+  "authorized_agent_id": "agt_aip_assistant_20260801_prod",
+  "biometric_event": {
+    "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+    "timestamp": "2026-08-18T14:23:07Z",
+    "type": "FIDO2_BIOMETRIC"
+  },
+  "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+  "receiving_institution_id": "NETWORK_MARKETPLACE",
+  "scope": {
+    "action_classes": [
+      "READ",
+      "DISCOVER",
+      "PRESENT"
+    ],
+    "consumer_preference_weights": {
+      "w_balance": 0.1,
+      "w_features": 0.1,
+      "w_fee": 0.3,
+      "w_rate": 0.5
+    },
+    "product_categories": [
+      "SAVINGS",
+      "MMA"
+    ]
+  },
+  "scope_expansion": {
+    "default_state": "EXISTING_RELATIONSHIPS_ONLY",
+    "expansion_requires": "BIOMETRIC_RECONFIRMATION",
+    "expansion_token_ttl_seconds": 3600
+  },
+  "signature": "MEUCIQCUv4f0mvkCwYbpC1IyyYYMh8ex3a3wNIwcxT32VqeIRgIgbShfpZfC9Caf/JvSUqhs5+LjTH5zEYI0ATB+N4FdQT0=",
+  "temporal_validity": {
+    "not_after": "2026-08-18T15:23:07Z",
+    "not_before": "2026-08-18T14:23:07Z"
+  },
+  "token_type": "AFSP_CONSUMER_AUTH",
+  "version": "0.1"
+}

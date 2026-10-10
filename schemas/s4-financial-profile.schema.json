@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s4-financial-profile.schema.json",
+  "title": "S4 financial profile attestation",
+  "description": "Signal 4: a certified S4 provider's privacy-preserving financial profile attestation (§8.3), verified by VAL-09. The `signals` object and every signal in it are closed (additionalProperties: false): §8.1 data minimization permits only the six derived signals, and raw financial data is never transmitted.",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "attestation_provider": {
+      "type": "string",
+      "description": "Certified S4 provider identifier."
+    },
+    "attestation_version": {
+      "const": "0.1"
+    },
+    "inquiry_event_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref"
+    },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "account_longevity": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "THIN",
+                "ESTABLISHING",
+                "ESTABLISHED",
+                "MATURE"
+              ]
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "value",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 account longevity."
+        },
+        "income_stability": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "IRREGULAR",
+                "VARIABLE",
+                "CONSISTENT",
+                "HIGHLY_CONSISTENT"
+              ]
+            },
+            "frequency_component": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            },
+            "regularity_component": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            },
+            "magnitude_component": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "value",
+            "frequency_component",
+            "regularity_component",
+            "magnitude_component",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 income stability."
+        },
+        "balance_range": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "LOW",
+                "MID_LOW",
+                "MID",
+                "MID_HIGH",
+                "HIGH"
+              ]
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "value",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 balance range (a band, never a balance)."
+        },
+        "transaction_regularity": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "IRREGULAR",
+                "MODERATE",
+                "REGULAR",
+                "HIGHLY_REGULAR"
+              ]
+            },
+            "behavioral_category": {
+              "enum": [
+                "TRANSACTOR",
+                "REVOLVER",
+                "SAVER",
+                "MIXED"
+              ]
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "value",
+            "behavioral_category",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 transaction regularity."
+        },
+        "relationship_breadth": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "enum": [
+                "SINGLE",
+                "LIMITED",
+                "MODERATE",
+                "BROAD"
+              ]
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "value",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 relationship breadth."
+        },
+        "product_eligibility": {
+          "type": "object",
+          "properties": {
+            "categories_indicated": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/product_category"
+              }
+            },
+            "minimum_balance_compatible": {
+              "type": "boolean"
+            },
+            "confidence": {
+              "$ref": "common.schema.json#/$defs/unit_interval"
+            }
+          },
+          "required": [
+            "categories_indicated",
+            "minimum_balance_compatible",
+            "confidence"
+          ],
+          "additionalProperties": false,
+          "description": "§8.3 product eligibility."
+        }
+      },
+      "required": [
+        "account_longevity",
+        "income_stability",
+        "balance_range",
+        "transaction_regularity",
+        "relationship_breadth",
+        "product_eligibility"
+      ],
+      "additionalProperties": false,
+      "description": "The six derived signals (§8.3). Closed: §8.1."
+    },
+    "behavioral_consistency_score": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "markers_evaluated": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "score",
+        "markers_evaluated"
+      ],
+      "description": "§8.4."
+    },
+    "privacy_parameters": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "const": "DIFFERENTIAL_PRIVACY_LAPLACE"
+        },
+        "epsilon": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "§8.2 names epsilon = 1.0 as the preferred embodiment; the verifier enforces the institution's configured maximum (reference default 1.0)."
+        },
+        "k_anonymity_k": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "§8.2 names k = 5 as the preferred embodiment; the verifier enforces the institution's configured minimum (reference default 5)."
+        }
+      },
+      "required": [
+        "method",
+        "epsilon",
+        "k_anonymity_k"
+      ],
+      "description": "§8.2 privacy parameters."
+    },
+    "anti_replay": {
+      "type": "object",
+      "properties": {
+        "nonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{32,}$",
+          "description": "Hex nonce of at least 128 bits."
+        },
+        "sequence_number": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "nonce",
+        "sequence_number"
+      ]
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/validity",
+      "description": "At most 3600 s."
+    },
+    "signature": {
+      "$ref": "common.schema.json#/$defs/signature_block",
+      "description": "Provider signature block, optionally with certificate_chain."
+    }
+  },
+  "required": [
+    "attestation_provider",
+    "attestation_version",
+    "inquiry_event_hash",
+    "signals",
+    "behavioral_consistency_score",
+    "privacy_parameters",
+    "anti_replay",
+    "temporal_validity",
+    "signature"
+  ]
+}

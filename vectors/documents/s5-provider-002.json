@@ -1,0 +1,20 @@
+{
+  "active_challenge_response_used": false,
+  "attestation": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEUCIQCherizsWUWZPup/RXxju+7SOie8REsOzk4JDdqK9Pd7gIgLd3Lf8VRv5EpwYH5F0sJUNpF4LNA4uo6aLtMwBCVbuo=",
+    "signed_by": "s5-provider-002-2026-q3",
+    "statement": "Score derived exclusively from passive behavioral observation."
+  },
+  "collection_duration_ms": 4200,
+  "provider_id": "certified_s5_provider_002",
+  "score": {
+    "normalized_score": 0.87,
+    "raw_score": 0.87
+  },
+  "session_correlation_id": "sess_2e4f6a8c0b2d4f6a",
+  "signal_types_contributing": [
+    "TOUCH_PATTERNS",
+    "NAVIGATION_TIMING"
+  ]
+}

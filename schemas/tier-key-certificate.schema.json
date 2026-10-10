@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/tier-key-certificate.schema.json",
+  "title": "Tier key certificate",
+  "description": "The consumer's issuing institution certifies one hardware-held key per Authorization Tier, bound to the enrolled root identity (§7.2), with the tier's EKU (§7.4): Tier 1 READ/DISCOVER/PRESENT, Tier 2 INITIATE, Tier 3 EXECUTE. A JSON form of the certificate policy AFSP-07 will define for X.509. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "cert_type": {
+      "const": "AFSP_TIER_KEY_CERTIFICATE"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "issuer_institution_id": {
+      "type": "string",
+      "description": "Issuing institution holding the consumer's KYC record (§7.2)."
+    },
+    "consumer_device_id": {
+      "type": "string"
+    },
+    "root_key_thumbprint": {
+      "$ref": "common.schema.json#/$defs/jwk_thumbprint",
+      "description": "Thumbprint of the enrolled TEE root key (§7.2)."
+    },
+    "authorization_tier": {
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        3
+      ]
+    },
+    "eku": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/action_class"
+      },
+      "minItems": 1,
+      "description": "Action classes this key may sign (VAL-08a)."
+    },
+    "public_key": {
+      "$ref": "common.schema.json#/$defs/jwk"
+    },
+    "hardware_bound": {
+      "type": "boolean"
+    },
+    "tee_attestation_verified": {
+      "type": "boolean"
+    },
+    "not_before": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "not_after": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "issuer_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "cert_type",
+    "version",
+    "issuer_institution_id",
+    "consumer_device_id",
+    "root_key_thumbprint",
+    "authorization_tier",
+    "eku",
+    "public_key",
+    "hardware_bound",
+    "tee_attestation_verified",
+    "not_before",
+    "not_after",
+    "issuer_signature"
+  ]
+}

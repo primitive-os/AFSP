@@ -1,0 +1,15 @@
+{
+  "checks": [
+    {
+      "code": "malformed",
+      "detail": "unsupported afsp_version \"0.2\"",
+      "id": "STRUCTURE",
+      "status": "FAIL"
+    }
+  ],
+  "outcome": "SESSION_TERMINATED",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals_present": [],
+  "signals_verified": []
+}

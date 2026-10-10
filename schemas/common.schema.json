@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/common.schema.json",
+  "title": "AFSP v0.1 common definitions",
+  "description": "Shared definitions referenced by every AFSP v0.1 document schema.",
+  "x-afsp-status": "v0.1",
+  "$defs": {
+    "timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|\\+00:00)$",
+      "description": "ISO 8601 UTC timestamp (AFSP uses UTC throughout). The reference implementation emits YYYY-MM-DDTHH:MM:SSZ and accepts Z or +00:00 with optional fractional seconds."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO 8601 calendar date (YYYY-MM-DD)."
+    },
+    "validity": {
+      "type": "object",
+      "properties": {
+        "not_before": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "not_after": {
+          "$ref": "#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "not_before",
+        "not_after"
+      ],
+      "description": "A validity window of two ISO 8601 UTC timestamps (§6.1 validity_window, §7.3 temporal_validity, §8.3)."
+    },
+    "signature_value": {
+      "type": "string",
+      "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+      "minLength": 12,
+      "description": "ECDSA-P256/SHA-256 signature in its one accepted encoding: strict DER, low-S (s <= n/2), standard base64 with padding, no whitespace (Appendix A 'MEUCIQ...'). Verifiers reject raw r||s, high-S, base64url, missing padding and non-minimal DER (bad_signature): accepting several encodings of one signature would make it malleable. Signers may produce any form; signing libraries convert it. Reference proposal P2, pending §18."
+    },
+    "algorithm": {
+      "const": "ECDSA-P256",
+      "description": "The only signature algorithm AFSP v0.1 permits (§3.4)."
+    },
+    "certificate_chain": {
+      "description": "Base64 DER X.509 certificate(s), leaf first: one string or an array (§6.1, §8.3).",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "signature_block": {
+      "type": "object",
+      "description": "A signature block (platform_signature, institution_signature, registry_signature, issuer_signature, attestation, signature). The signing input is the RFC 8785 canonical form of the whole document with only the block's `signature` member removed (reference proposal pending §18).",
+      "properties": {
+        "algorithm": {
+          "$ref": "#/$defs/algorithm"
+        },
+        "signed_by": {
+          "type": "string",
+          "description": "Signing party (packages, session tokens, audit records: platform.afsp.org, §6.1) or signing key identifier."
+        },
+        "signed_with": {
+          "type": "string",
+          "description": "Signing key identifier (§9.4 names the key member signed_with)."
+        },
+        "signature": {
+          "$ref": "#/$defs/signature_value"
+        },
+        "certificate_chain": {
+          "$ref": "#/$defs/certificate_chain"
+        },
+        "statement": {
+          "type": "string",
+          "description": "Provider statement about how an S5 score was derived (§11.2)."
+        }
+      },
+      "required": [
+        "algorithm",
+        "signature"
+      ]
+    },
+    "jwk": {
+      "type": "object",
+      "description": "A P-256 public key as a JWK (RFC 7517). AFSP v0.1 permits ECDSA-P256 only (§3.4).",
+      "properties": {
+        "kty": {
+          "const": "EC"
+        },
+        "crv": {
+          "const": "P-256"
+        },
+        "x": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{43}$",
+          "description": "base64url x coordinate (32 bytes)."
+        },
+        "y": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{43}$",
+          "description": "base64url y coordinate (32 bytes)."
+        },
+        "kid": {
+          "type": "string",
+          "description": "Key identifier."
+        }
+      },
+      "required": [
+        "kty",
+        "crv",
+        "x",
+        "y"
+      ],
+      "not": {
+        "required": [
+          "d"
+        ]
+      }
+    },
+    "jwk_thumbprint": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{43}$",
+      "description": "RFC 7638 JWK thumbprint (SHA-256, base64url, no padding)."
+    },
+    "sha256_ref": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "description": "sha256:<64 lowercase hex> reference to a digest (build hashes, authorization token hashes, audit references). Authorization token hashes and audit signal hashes are over the RFC 8785 form of the whole object, signature included."
+    },
+    "hex_nonce_256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64,}$",
+      "description": "Nonce of at least 256 bits, lowercase hex (consumed as a string, so one spelling per nonce)."
+    },
+    "package_id": {
+      "type": "string",
+      "pattern": "^pkg_[0-9a-f]{32,}$",
+      "description": "pkg_ followed by a unique identifier of at least 128 bits in lowercase hex (§6.1: 256-bit)."
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^sess_[0-9a-f]{16,}$",
+      "description": "sess_ followed by a session correlation identifier in lowercase hex (§6.1)."
+    },
+    "unit_interval": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "A number within [0.0, 1.0] (scores and confidences)."
+    },
+    "action_class": {
+      "enum": [
+        "READ",
+        "DISCOVER",
+        "PRESENT",
+        "INITIATE",
+        "EXECUTE"
+      ],
+      "description": "Action classes (§4.3, §7.4), in ascending order of consequence."
+    },
+    "product_category": {
+      "enum": [
+        "SAVINGS",
+        "CHECKING",
+        "CD",
+        "MMA"
+      ],
+      "description": "Product categories (§4.3)."
+    },
+    "signal_id": {
+      "enum": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "description": "Trust signal identifiers (§3.3, §6.1)."
+    },
+    "s5_signal_type": {
+      "enum": [
+        "KEYSTROKE_DYNAMICS",
+        "TOUCH_PATTERNS",
+        "DEVICE_MOTION",
+        "MOUSE_MOVEMENT",
+        "NAVIGATION_TIMING",
+        "DEVICE_HARDWARE",
+        "AMBIENT_ENVIRONMENT_CONSISTENCY"
+      ],
+      "description": "S5 signal types (§4.3, §11.2); AMBIENT_ENVIRONMENT_CONSISTENCY is optional (§11.4 ECL)."
+    },
+    "clearance_decision": {
+      "enum": [
+        "PROCEED_TO_KYC",
+        "REQUEST_ADDITIONAL_VERIFICATION",
+        "DECLINE_SESSION"
+      ],
+      "description": "Clearance decisions (§4.3, §10.2)."
+    },
+    "return_trip_outcome": {
+      "enum": [
+        "OPENED",
+        "DECLINED",
+        "PENDING",
+        "ABANDONED"
+      ],
+      "description": "Return Trip outcomes (§4.3, §13.2)."
+    },
+    "certification_status": {
+      "enum": [
+        "CERTIFIED",
+        "SUSPENDED",
+        "REVOKED"
+      ],
+      "description": "Certification status of an agent or signal provider (reference proposal)."
+    },
+    "participation_status": {
+      "enum": [
+        "ACTIVE",
+        "INACTIVE",
+        "PENDING"
+      ],
+      "description": "Participation Registry status (§12.2)."
+    },
+    "participation_state": {
+      "enum": [
+        "DEFAULT_SCOPE",
+        "EXPANDED_SCOPE"
+      ],
+      "description": "Tiered participation states (§9.2)."
+    },
+    "biometric_event": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "FIDO2_BIOMETRIC"
+        },
+        "timestamp": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "tee_attestation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Hardware attestation from the device TEE."
+        }
+      },
+      "required": [
+        "type",
+        "timestamp",
+        "tee_attestation"
+      ],
+      "description": "§7.3 biometric_event."
+    },
+    "unknown_or_bool": {
+      "description": "true, false, or the string \"unknown\" (§13.2).",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "preference_weights": {
+      "type": "object",
+      "properties": {
+        "w_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "w_fee": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "w_balance_compatibility": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "§9.3 name."
+        },
+        "w_balance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "§7.3 name for w_balance_compatibility."
+        },
+        "w_features": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "w_rate",
+        "w_fee",
+        "w_features"
+      ],
+      "description": "Consumer preference weights (§7.3, §9.3, §9.5); they sum to 1.0.",
+      "anyOf": [
+        {
+          "required": [
+            "w_balance_compatibility"
+          ]
+        },
+        {
+          "required": [
+            "w_balance"
+          ]
+        }
+      ]
+    }
+  }
+}

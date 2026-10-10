@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s5-provider-score.schema.json",
+  "title": "S5 provider score submission",
+  "description": "A certified Signal 5 provider's behavioral session intelligence score, submitted through the S5 abstraction layer interface (§11.2), verified by VAL-10 when carried directly in the package.",
+  "x-afsp-status": "v0.1",
+  "type": "object",
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "session_correlation_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "score": {
+      "type": "object",
+      "properties": {
+        "raw_score": {
+          "type": "number"
+        },
+        "normalized_score": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "interpretation": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "raw_score",
+        "normalized_score"
+      ]
+    },
+    "signal_types_contributing": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/s5_signal_type"
+      },
+      "minItems": 1
+    },
+    "collection_duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "active_challenge_response_used": {
+      "type": "boolean"
+    },
+    "attestation": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "provider_id",
+    "session_correlation_id",
+    "score",
+    "signal_types_contributing",
+    "collection_duration_ms",
+    "active_challenge_response_used",
+    "attestation"
+  ]
+}

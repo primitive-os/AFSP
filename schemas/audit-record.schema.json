@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/audit-record.schema.json",
+  "title": "Audit record",
+  "description": "The signed, hash-chained audit record the platform generates when a session token is minted (§10.4): stage timestamps, references to each trust signal by functional role (never entity name), the clearance outcome and the session token identifier. No PII, raw financial data or biometric data. Retained at least seven years. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "record_type": {
+      "const": "AFSP_AUDIT_RECORD"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^aud_[0-9a-f]{32,}$"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "package_id": {
+      "$ref": "common.schema.json#/$defs/package_id"
+    },
+    "session_token_id": {
+      "type": "string"
+    },
+    "stage_timestamps": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/timestamp"
+      }
+    },
+    "signal_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signal": {
+            "$ref": "common.schema.json#/$defs/signal_id"
+          },
+          "functional_role": {
+            "enum": [
+              "AGENT_REGISTRY",
+              "ENROLLED_DEVICE",
+              "FEDERATED_REFERRER",
+              "CERTIFIED_S4_PROVIDER",
+              "S5_COMPOSITE"
+            ]
+          },
+          "signal_hash": {
+            "$ref": "common.schema.json#/$defs/sha256_ref"
+          }
+        },
+        "required": [
+          "signal",
+          "functional_role",
+          "signal_hash"
+        ]
+      }
+    },
+    "clearance_decision": {
+      "$ref": "common.schema.json#/$defs/clearance_decision"
+    },
+    "clearance_validated": {
+      "type": "boolean"
+    },
+    "prev_record_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref"
+    },
+    "retention_until": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "platform_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "record_type",
+    "version",
+    "record_id",
+    "session_id",
+    "package_id",
+    "session_token_id",
+    "stage_timestamps",
+    "signal_references",
+    "clearance_decision",
+    "clearance_validated",
+    "prev_record_hash",
+    "retention_until",
+    "platform_signature"
+  ]
+}

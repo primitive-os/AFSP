@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "id": "STRUCTURE",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-04a",
+      "status": "PASS"
+    },
+    {
+      "id": "VAL-01",
+      "status": "PASS"
+    },
+    {
+      "code": "wrong_binding",
+      "detail": "package is addressed to pacific_savings_coop_afsp_001",
+      "id": "VAL-02",
+      "status": "FAIL"
+    }
+  ],
+  "outcome": "SESSION_TERMINATED",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals_present": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "signals_verified": []
+}

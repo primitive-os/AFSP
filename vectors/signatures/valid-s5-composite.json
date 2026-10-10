@@ -1,0 +1,42 @@
+{
+  "description": "S5: the platform's composite, 0.6 x 0.91 + 0.4 x 0.87 (§11.3). Signed by platform.",
+  "document": {
+    "attestation": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEUCIQDjclYzDjM9YcwE0/aBKujP0ZFsngks2G4NDTZ+tl0JpAIgZcO4ZTpOyP/J/G0hho1yjSnqRi8tfLe3aSjAKLvE07Y=",
+      "signed_by": "platform-2026-q3"
+    },
+    "composite_score": 0.894,
+    "computed_at": "2026-08-18T14:23:09Z",
+    "ecl": {
+      "evaluated": true,
+      "geographic_risk_tier": 1,
+      "out_of_band_required": false,
+      "step_up_required": false
+    },
+    "provider_count": 2,
+    "score_type": "COMPOSITE",
+    "session_correlation_id": "sess_2e4f6a8c0b2d4f6a",
+    "signal_types_contributing": [
+      "TOUCH_PATTERNS",
+      "DEVICE_MOTION",
+      "NAVIGATION_TIMING",
+      "DEVICE_HARDWARE"
+    ]
+  },
+  "expected": {
+    "code": null,
+    "valid": true
+  },
+  "id": "valid-s5-composite",
+  "kind": "behavioral_composite",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "platform-2026-q3",
+    "kty": "EC",
+    "x": "J2I4txD-jBUZSC602hBte9hOE5ie0keV_4jO9sT3xmA",
+    "y": "UHon5nxqt_qq4caPEzMjTewrcYTuRqy07TnB2zxQgjQ"
+  },
+  "signing_input": "{\"attestation\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"platform-2026-q3\"},\"composite_score\":0.894,\"computed_at\":\"2026-08-18T14:23:09Z\",\"ecl\":{\"evaluated\":true,\"geographic_risk_tier\":1,\"out_of_band_required\":false,\"step_up_required\":false},\"provider_count\":2,\"score_type\":\"COMPOSITE\",\"session_correlation_id\":\"sess_2e4f6a8c0b2d4f6a\",\"signal_types_contributing\":[\"TOUCH_PATTERNS\",\"DEVICE_MOTION\",\"NAVIGATION_TIMING\",\"DEVICE_HARDWARE\"]}",
+  "signing_input_sha256": "sha256:cfa643408a2359478cfe91671f433e36f847ed026bc6fa04ddc73440b666adca"
+}

@@ -1,0 +1,74 @@
+{
+  "description": "Audit record for the minted session token (§10.4). Signed by platform.",
+  "document": {
+    "clearance_decision": "PROCEED_TO_KYC",
+    "clearance_validated": true,
+    "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+    "platform_signature": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEUCIQDUKZKK07lAhnKT2S5v6QXtIStC3q/nEyhUuVvxpKum3gIgNmTVtxDJQVtOdCJIvYT4YFYY8ZqOa5H5IvsYB8jjcvc=",
+      "signed_by": "platform.afsp.org"
+    },
+    "prev_record_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "record_id": "aud_f2ac9d00f2cc3c6e0f64656c0e32d23923bcadcdf863f4c2404eaf717c6ccf68",
+    "record_type": "AFSP_AUDIT_RECORD",
+    "retention_until": "2033-08-18T14:24:15Z",
+    "session_id": "sess_2e4f6a8c0b2d4f6a",
+    "session_token_id": "stk_5f883ce0ca9fe74866a6d99ae2bf94d6b3160d0ccfcf10645093d949349de14f",
+    "signal_references": [
+      {
+        "functional_role": "AGENT_REGISTRY",
+        "signal": "S1",
+        "signal_hash": "sha256:d1dd66fea214faa15f67e6ce47c8c89c464f63c22c9f24cc36d96b3540218892"
+      },
+      {
+        "functional_role": "ENROLLED_DEVICE",
+        "signal": "S2",
+        "signal_hash": "sha256:e555d76b28c48fccf86bdfedea035827258682c9d45a937d240be0efe36b2f0a"
+      },
+      {
+        "functional_role": "FEDERATED_REFERRER",
+        "signal": "S3",
+        "signal_hash": "sha256:e97ec0aec458f431d42be808d1c1d01d022d3132ac0c45a9157ef1dd556656af"
+      },
+      {
+        "functional_role": "CERTIFIED_S4_PROVIDER",
+        "signal": "S4",
+        "signal_hash": "sha256:5ef8ddd0bc528151470547cfda5d4a6ac53e8959a1b31dac46b32587c7f2c805"
+      },
+      {
+        "functional_role": "S5_COMPOSITE",
+        "signal": "S5",
+        "signal_hash": "sha256:e8445d3d9c383adaf45453f7732521fc050f80304b5528a046ea56ddb940b8e7"
+      }
+    ],
+    "stage_timestamps": {
+      "clearance_received": "2026-08-18T14:24:15Z",
+      "consumer_authorized": "2026-08-18T14:23:07Z",
+      "ivc_confirmed": "2026-08-18T14:24:12Z",
+      "package_assembled": "2026-08-18T14:23:09Z",
+      "package_bound": "2026-08-18T14:24:14Z",
+      "reverse_inquiry_sent": "2026-08-18T14:23:09Z",
+      "s4_assembled": "2026-08-18T14:23:08Z",
+      "scope_expanded": "2026-08-18T14:23:08Z",
+      "session_token_minted": "2026-08-18T14:24:15Z",
+      "step_up_authorized": "2026-08-18T14:24:13Z"
+    },
+    "version": "0.1"
+  },
+  "expected": {
+    "code": null,
+    "valid": true
+  },
+  "id": "valid-audit-record",
+  "kind": "audit_record",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "platform-2026-q3",
+    "kty": "EC",
+    "x": "J2I4txD-jBUZSC602hBte9hOE5ie0keV_4jO9sT3xmA",
+    "y": "UHon5nxqt_qq4caPEzMjTewrcYTuRqy07TnB2zxQgjQ"
+  },
+  "signing_input": "{\"clearance_decision\":\"PROCEED_TO_KYC\",\"clearance_validated\":true,\"package_id\":\"pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b\",\"platform_signature\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"platform.afsp.org\"},\"prev_record_hash\":\"sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"record_id\":\"aud_f2ac9d00f2cc3c6e0f64656c0e32d23923bcadcdf863f4c2404eaf717c6ccf68\",\"record_type\":\"AFSP_AUDIT_RECORD\",\"retention_until\":\"2033-08-18T14:24:15Z\",\"session_id\":\"sess_2e4f6a8c0b2d4f6a\",\"session_token_id\":\"stk_5f883ce0ca9fe74866a6d99ae2bf94d6b3160d0ccfcf10645093d949349de14f\",\"signal_references\":[{\"functional_role\":\"AGENT_REGISTRY\",\"signal\":\"S1\",\"signal_hash\":\"sha256:d1dd66fea214faa15f67e6ce47c8c89c464f63c22c9f24cc36d96b3540218892\"},{\"functional_role\":\"ENROLLED_DEVICE\",\"signal\":\"S2\",\"signal_hash\":\"sha256:e555d76b28c48fccf86bdfedea035827258682c9d45a937d240be0efe36b2f0a\"},{\"functional_role\":\"FEDERATED_REFERRER\",\"signal\":\"S3\",\"signal_hash\":\"sha256:e97ec0aec458f431d42be808d1c1d01d022d3132ac0c45a9157ef1dd556656af\"},{\"functional_role\":\"CERTIFIED_S4_PROVIDER\",\"signal\":\"S4\",\"signal_hash\":\"sha256:5ef8ddd0bc528151470547cfda5d4a6ac53e8959a1b31dac46b32587c7f2c805\"},{\"functional_role\":\"S5_COMPOSITE\",\"signal\":\"S5\",\"signal_hash\":\"sha256:e8445d3d9c383adaf45453f7732521fc050f80304b5528a046ea56ddb940b8e7\"}],\"stage_timestamps\":{\"clearance_received\":\"2026-08-18T14:24:15Z\",\"consumer_authorized\":\"2026-08-18T14:23:07Z\",\"ivc_confirmed\":\"2026-08-18T14:24:12Z\",\"package_assembled\":\"2026-08-18T14:23:09Z\",\"package_bound\":\"2026-08-18T14:24:14Z\",\"reverse_inquiry_sent\":\"2026-08-18T14:23:09Z\",\"s4_assembled\":\"2026-08-18T14:23:08Z\",\"scope_expanded\":\"2026-08-18T14:23:08Z\",\"session_token_minted\":\"2026-08-18T14:24:15Z\",\"step_up_authorized\":\"2026-08-18T14:24:13Z\"},\"version\":\"0.1\"}",
+  "signing_input_sha256": "sha256:af11a15f69cff3d34bf7e45fde3e66de2a74f6e28b5d784d8a1e43baeddd76e5"
+}

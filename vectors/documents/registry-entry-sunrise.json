@@ -1,0 +1,36 @@
+{
+  "api_endpoint": "https://afsp.sunrise.example/v0.1",
+  "certification": {
+    "certified_date": "2026-07-01T00:00:00Z",
+    "kyc_rigor_status": "CURRENT",
+    "next_reverification_date": "2027-07-01T00:00:00Z",
+    "pathway": "STANDARD"
+  },
+  "geographic_markets": [
+    "US-CA",
+    "US-TX",
+    "US-FL"
+  ],
+  "institution_id": "sunrise_digital_bank_afsp_001",
+  "institution_name": "Sunrise Digital Bank",
+  "product_categories": [
+    "SAVINGS",
+    "CHECKING",
+    "MMA"
+  ],
+  "protocol_versions_supported": [
+    "0.1"
+  ],
+  "signing_key": {
+    "key_id": "sunrise_digital_bank_signing_key_2026",
+    "public_key": {
+      "crv": "P-256",
+      "kty": "EC",
+      "x": "SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0",
+      "y": "Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU"
+    },
+    "rotation_timestamp": "2026-07-01T00:00:00Z"
+  },
+  "status": "ACTIVE",
+  "status_change_date": "2026-07-01T00:00:00Z"
+}

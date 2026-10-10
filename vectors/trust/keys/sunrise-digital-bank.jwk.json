@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "sunrise_digital_bank_signing_key_2026",
+  "kty": "EC",
+  "x": "SBQnU_XouDQKCmebFzobf8jaJAebZM60o5osdoCGMc0",
+  "y": "Zev3mNcxrbBbb_fQWAOwWDV5wqxxzuQ9IGnrB51uWcU"
+}

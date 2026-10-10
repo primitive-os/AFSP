@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s2-signal.schema.json",
+  "title": "S2 consumer authorization signal (envelope)",
+  "description": "Signal 2 as carried in the package: the session (Tier 1) authorization and any step-up authorizations (Tier 2 INITIATE, Tier 3 EXECUTE), each with the certificate of the tier key that signed it; the scope expansion token, if the consumer expanded scope (§9.2); and the IVC-confirmed Servicing Intent Package for INITIATE and EXECUTE (§5.8). Verified by VAL-07, VAL-08 and VAL-08a (§6.2). Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "authorizations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "$ref": "consumer-authorization-token.schema.json"
+          },
+          "key_certificate": {
+            "$ref": "tier-key-certificate.schema.json"
+          }
+        },
+        "required": [
+          "token",
+          "key_certificate"
+        ]
+      }
+    },
+    "scope_expansion_token": {
+      "$ref": "scope-expansion-token.schema.json"
+    },
+    "servicing_intent_package": {
+      "$ref": "servicing-intent-package.schema.json"
+    }
+  },
+  "required": [
+    "authorizations"
+  ]
+}

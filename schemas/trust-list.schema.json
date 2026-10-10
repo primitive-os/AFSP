@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/trust-list.schema.json",
+  "title": "AFSP trust list",
+  "description": "One signed document, published by the AFSP administrator, carrying every key a receiving institution needs to validate a package locally with no live call: the platform, agent registry and certified S4/S5 provider keys (VAL-01, VAL-05, VAL-09, VAL-10) and the Participation Registry entries (§12.2). Verified against a pinned administrator key; `sequence` never goes backwards. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "list_type": {
+      "const": "AFSP_TRUST_LIST"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "issued_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "next_update": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/certification_status"
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key_id": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "$ref": "common.schema.json#/$defs/jwk"
+                },
+                "status": {
+                  "enum": [
+                    "ACTIVE",
+                    "RETIRED",
+                    "REVOKED"
+                  ]
+                },
+                "not_before": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                },
+                "not_after": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                }
+              },
+              "required": [
+                "key_id",
+                "public_key",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "keys"
+        ]
+      }
+    },
+    "agent_registries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/certification_status"
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key_id": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "$ref": "common.schema.json#/$defs/jwk"
+                },
+                "status": {
+                  "enum": [
+                    "ACTIVE",
+                    "RETIRED",
+                    "REVOKED"
+                  ]
+                },
+                "not_before": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                },
+                "not_after": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                }
+              },
+              "required": [
+                "key_id",
+                "public_key",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "keys"
+        ]
+      }
+    },
+    "s4_providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/certification_status"
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key_id": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "$ref": "common.schema.json#/$defs/jwk"
+                },
+                "status": {
+                  "enum": [
+                    "ACTIVE",
+                    "RETIRED",
+                    "REVOKED"
+                  ]
+                },
+                "not_before": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                },
+                "not_after": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                }
+              },
+              "required": [
+                "key_id",
+                "public_key",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "keys"
+        ]
+      }
+    },
+    "s5_providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/certification_status"
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key_id": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "$ref": "common.schema.json#/$defs/jwk"
+                },
+                "status": {
+                  "enum": [
+                    "ACTIVE",
+                    "RETIRED",
+                    "REVOKED"
+                  ]
+                },
+                "not_before": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                },
+                "not_after": {
+                  "$ref": "common.schema.json#/$defs/timestamp"
+                }
+              },
+              "required": [
+                "key_id",
+                "public_key",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "keys"
+        ]
+      }
+    },
+    "institutions": {
+      "type": "array",
+      "items": {
+        "$ref": "registry-entry.schema.json"
+      }
+    },
+    "signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "list_type",
+    "version",
+    "sequence",
+    "issuer",
+    "issued_at",
+    "next_update",
+    "signature"
+  ]
+}

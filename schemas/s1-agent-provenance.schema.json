@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s1-agent-provenance.schema.json",
+  "title": "S1 agent provenance attestation",
+  "description": "Signal 1: the AFSP agent registry attests that the agent is certified and that the presented build hash is a certified build (VAL-05, VAL-06; §6.2). Signed with registry_signature. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "attestation_type": {
+      "const": "AFSP_AGENT_PROVENANCE"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "agent_id": {
+      "type": "string",
+      "description": "Agent identifier from the AFSP agent registry."
+    },
+    "operator_id": {
+      "type": "string",
+      "description": "The accountable operator (the certified CLO, §5)."
+    },
+    "build_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref",
+      "description": "The build hash the running agent presented."
+    },
+    "registry_record": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "common.schema.json#/$defs/certification_status"
+        },
+        "certified_build_hashes": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/sha256_ref"
+          },
+          "description": "Certified builds (VAL-06)."
+        },
+        "certified_date": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "status",
+        "certified_build_hashes",
+        "certified_date"
+      ],
+      "description": "The registry's record for agent_id."
+    },
+    "issued_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "not_after": {
+      "$ref": "common.schema.json#/$defs/timestamp",
+      "description": "At most 3600 s after issued_at."
+    },
+    "registry_signature": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "attestation_type",
+    "version",
+    "agent_id",
+    "operator_id",
+    "build_hash",
+    "registry_record",
+    "issued_at",
+    "not_after",
+    "registry_signature"
+  ]
+}

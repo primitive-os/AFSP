@@ -1,0 +1,79 @@
+{
+  "description": "S4: financial profile attestation (Appendix A.4). Signed by s4-provider-001.",
+  "document": {
+    "anti_replay": {
+      "nonce": "a3f7c2e9b1d4f6a8c0e2b4d6f8a0c2e4",
+      "sequence_number": 847
+    },
+    "attestation_provider": "certified_s4_provider_001",
+    "attestation_version": "0.1",
+    "behavioral_consistency_score": {
+      "markers_evaluated": 5,
+      "score": 0.89
+    },
+    "inquiry_event_hash": "sha256:601759a21a1277a09d6551251e3e592f9e26b7a3a5df6b9f316eeaea1124b52d",
+    "privacy_parameters": {
+      "epsilon": 1.0,
+      "k_anonymity_k": 5,
+      "method": "DIFFERENTIAL_PRIVACY_LAPLACE"
+    },
+    "signals": {
+      "account_longevity": {
+        "confidence": 0.94,
+        "value": "MATURE"
+      },
+      "balance_range": {
+        "confidence": 0.88,
+        "value": "MID_HIGH"
+      },
+      "income_stability": {
+        "confidence": 0.93,
+        "frequency_component": 0.97,
+        "magnitude_component": 0.91,
+        "regularity_component": 0.95,
+        "value": "HIGHLY_CONSISTENT"
+      },
+      "product_eligibility": {
+        "categories_indicated": [
+          "SAVINGS",
+          "MMA"
+        ],
+        "confidence": 0.95,
+        "minimum_balance_compatible": true
+      },
+      "relationship_breadth": {
+        "confidence": 0.86,
+        "value": "MODERATE"
+      },
+      "transaction_regularity": {
+        "behavioral_category": "SAVER",
+        "confidence": 0.91,
+        "value": "HIGHLY_REGULAR"
+      }
+    },
+    "signature": {
+      "algorithm": "ECDSA-P256",
+      "signature": "MEQCIFWp2UxWEGY/JZNQT2mPMw0gZowuE+NoXFc8g9zNYGgkAiB0icNuvWs2T3coAT37HPvkdUyqH7MJx8nC8/HBB3RyUA==",
+      "signed_by": "s4-provider-001-2026"
+    },
+    "temporal_validity": {
+      "not_after": "2026-08-18T15:23:08Z",
+      "not_before": "2026-08-18T14:23:08Z"
+    }
+  },
+  "expected": {
+    "code": null,
+    "valid": true
+  },
+  "id": "valid-s4-financial-profile",
+  "kind": "financial_profile",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "s4-provider-001-2026",
+    "kty": "EC",
+    "x": "wkmRnq5tCuUzom1iKYOhvjq3V7NGm5ybSrPZGZTPW80",
+    "y": "Sk382EeSzwHraiCU2_lDaV-CKNJFcCl7irJeXo78fJA"
+  },
+  "signing_input": "{\"anti_replay\":{\"nonce\":\"a3f7c2e9b1d4f6a8c0e2b4d6f8a0c2e4\",\"sequence_number\":847},\"attestation_provider\":\"certified_s4_provider_001\",\"attestation_version\":\"0.1\",\"behavioral_consistency_score\":{\"markers_evaluated\":5,\"score\":0.89},\"inquiry_event_hash\":\"sha256:601759a21a1277a09d6551251e3e592f9e26b7a3a5df6b9f316eeaea1124b52d\",\"privacy_parameters\":{\"epsilon\":1,\"k_anonymity_k\":5,\"method\":\"DIFFERENTIAL_PRIVACY_LAPLACE\"},\"signals\":{\"account_longevity\":{\"confidence\":0.94,\"value\":\"MATURE\"},\"balance_range\":{\"confidence\":0.88,\"value\":\"MID_HIGH\"},\"income_stability\":{\"confidence\":0.93,\"frequency_component\":0.97,\"magnitude_component\":0.91,\"regularity_component\":0.95,\"value\":\"HIGHLY_CONSISTENT\"},\"product_eligibility\":{\"categories_indicated\":[\"SAVINGS\",\"MMA\"],\"confidence\":0.95,\"minimum_balance_compatible\":true},\"relationship_breadth\":{\"confidence\":0.86,\"value\":\"MODERATE\"},\"transaction_regularity\":{\"behavioral_category\":\"SAVER\",\"confidence\":0.91,\"value\":\"HIGHLY_REGULAR\"}},\"signature\":{\"algorithm\":\"ECDSA-P256\",\"signed_by\":\"s4-provider-001-2026\"},\"temporal_validity\":{\"not_after\":\"2026-08-18T15:23:08Z\",\"not_before\":\"2026-08-18T14:23:08Z\"}}",
+  "signing_input_sha256": "sha256:164d56f19b8c1bdbc621991e341d4360f8319a06b65c03e802037b0f76f86fff"
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/scope-expansion-token.schema.json",
+  "title": "Scope expansion token",
+  "description": "The consumer's biometric reconfirmation activating Expanded Scope for one inquiry session (§9.2), signed with the Tier 1 key; the top-level `signature` is over the canonical token without it. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "token_type": {
+      "const": "AFSP_SCOPE_EXPANSION"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "consumer_device_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "authorization_token_hash": {
+      "$ref": "common.schema.json#/$defs/sha256_ref",
+      "description": "SHA-256 of the canonical authorization token this expands."
+    },
+    "participation_state": {
+      "const": "EXPANDED_SCOPE"
+    },
+    "biometric_event": {
+      "$ref": "common.schema.json#/$defs/biometric_event"
+    },
+    "temporal_validity": {
+      "$ref": "common.schema.json#/$defs/validity"
+    },
+    "signature": {
+      "$ref": "common.schema.json#/$defs/signature_value"
+    }
+  },
+  "required": [
+    "token_type",
+    "version",
+    "consumer_device_id",
+    "session_id",
+    "authorization_token_hash",
+    "participation_state",
+    "biometric_event",
+    "temporal_validity",
+    "signature"
+  ]
+}

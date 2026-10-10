@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "alice-tier1",
+  "kty": "EC",
+  "x": "r0R47qQ8JFvS-CDNMktutqh3WosrRjB_-RwG83eEjD8",
+  "y": "eDk6LfmwuZ4s7xWbPYYmg4jlZmg7Qxlx3iho34eTX-4"
+}

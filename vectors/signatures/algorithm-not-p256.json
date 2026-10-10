@@ -1,0 +1,45 @@
+{
+  "description": "algorithm must be ECDSA-P256 (§3.4).",
+  "document": {
+    "attestation_type": "AFSP_FEDERATED_REFERRAL",
+    "institution_signature": {
+      "algorithm": "ES256K",
+      "signature": "MEUCIQD1Ghd1rH7DdTjl7nu8Jo+dqqi2r0R/41O5eLpLIZ8+FAIgaIa6GTkpbLGmjxjupd7ncSnS1jv4XHA/5KM3s5oIKTA=",
+      "signed_by": "harbor_federal_signing_key_2026"
+    },
+    "issued_at": "2026-08-18T14:23:08Z",
+    "kyc": {
+      "program": "CIP_STANDARD",
+      "status": "VERIFIED",
+      "verified_on": "2026-02"
+    },
+    "not_after": "2026-08-18T15:23:08Z",
+    "referral_id": "ref_5d1e8a3c7b9f2e4a",
+    "referring_institution_id": "harbor_federal_afsp_001",
+    "relationship": {
+      "established_on": "2019-06",
+      "standing": "GOOD"
+    },
+    "session_id": "sess_2e4f6a8c0b2d4f6a",
+    "subject": {
+      "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+      "root_key_thumbprint": "pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE"
+    },
+    "version": "0.1"
+  },
+  "expected": {
+    "code": "bad_signature",
+    "valid": false
+  },
+  "id": "algorithm-not-p256",
+  "kind": "federated_referral",
+  "public_key": {
+    "crv": "P-256",
+    "kid": "harbor_federal_signing_key_2026",
+    "kty": "EC",
+    "x": "G1dW-txyit4oz2m8aMmV3MpVevBgERpVIEUd3_-WTKs",
+    "y": "PbNR2HEeipXDGsCPjcGo7XvElDNfnzlwg2QYmG9IMUA"
+  },
+  "signing_input": "{\"attestation_type\":\"AFSP_FEDERATED_REFERRAL\",\"institution_signature\":{\"algorithm\":\"ES256K\",\"signed_by\":\"harbor_federal_signing_key_2026\"},\"issued_at\":\"2026-08-18T14:23:08Z\",\"kyc\":{\"program\":\"CIP_STANDARD\",\"status\":\"VERIFIED\",\"verified_on\":\"2026-02\"},\"not_after\":\"2026-08-18T15:23:08Z\",\"referral_id\":\"ref_5d1e8a3c7b9f2e4a\",\"referring_institution_id\":\"harbor_federal_afsp_001\",\"relationship\":{\"established_on\":\"2019-06\",\"standing\":\"GOOD\"},\"session_id\":\"sess_2e4f6a8c0b2d4f6a\",\"subject\":{\"consumer_device_id\":\"dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c\",\"root_key_thumbprint\":\"pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE\"},\"version\":\"0.1\"}",
+  "signing_input_sha256": "sha256:11554d179c0c2510de7a4bbd8b1c4f495a48eb4891a6e7ec2afe1492dea00fce"
+}

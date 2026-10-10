@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/servicing-intent-package.schema.json",
+  "title": "Servicing Intent Package",
+  "description": "The structured Servicing Intent Package the Intent Verification Checkpoint (IVC) confirmation is rendered from (§5.8, Appendix A.8). ivc_display_text is generated only from the structured fields; the step-up authorization signs its hash. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "package_type": {
+      "const": "SERVICING_INTENT_PACKAGE"
+    },
+    "afsp_version": {
+      "const": "0.1"
+    },
+    "session_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "action_class": {
+      "enum": [
+        "INITIATE",
+        "EXECUTE"
+      ],
+      "description": "The IVC applies to INITIATE and EXECUTE (§7.4)."
+    },
+    "authorization_tier": {
+      "type": "string"
+    },
+    "action_type": {
+      "type": "string",
+      "description": "e.g. ACCOUNT_OPENING, ACCOUNT_FUNDING."
+    },
+    "receiving_institution": {
+      "type": "string",
+      "description": "Institution display name."
+    },
+    "receiving_institution_id": {
+      "type": "string",
+      "description": "Reference proposal: registered institution identifier."
+    },
+    "product": {
+      "type": "string"
+    },
+    "product_terms": {
+      "type": "object"
+    },
+    "amount": {
+      "description": "Amount, where the action moves funds; null otherwise."
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "timing": {
+      "type": "string"
+    },
+    "ivc_display_text": {
+      "type": "string"
+    },
+    "ivc_confirmed": {
+      "type": "boolean"
+    },
+    "ivc_confirmation_timestamp": {
+      "type": "string",
+      "description": "ISO 8601 UTC once confirmed; empty before confirmation.",
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        {
+          "const": ""
+        }
+      ]
+    },
+    "generated_from_structured_fields": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "package_type",
+    "afsp_version",
+    "session_id",
+    "action_class",
+    "authorization_tier",
+    "action_type",
+    "receiving_institution",
+    "product",
+    "currency",
+    "timing",
+    "ivc_display_text",
+    "ivc_confirmed",
+    "ivc_confirmation_timestamp",
+    "generated_from_structured_fields"
+  ]
+}

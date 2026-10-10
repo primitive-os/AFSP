@@ -1,0 +1,7 @@
+{
+  "crv": "P-256",
+  "kid": "harbor_federal_signing_key_2026",
+  "kty": "EC",
+  "x": "G1dW-txyit4oz2m8aMmV3MpVevBgERpVIEUd3_-WTKs",
+  "y": "PbNR2HEeipXDGsCPjcGo7XvElDNfnzlwg2QYmG9IMUA"
+}

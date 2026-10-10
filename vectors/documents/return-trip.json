@@ -1,0 +1,19 @@
+{
+  "institution_id": "sunrise_digital_bank_afsp_001",
+  "institution_signature": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEUCIQCeKjFbqy0/XJUi790azYgi3IMEvCq8DseliCyMcizLLwIgUOXZCwSuc6sAZ+kF5VMLUqZX2BiHesazvECffk/5rNo=",
+    "signed_by": "sunrise_digital_bank_signing_key_2026"
+  },
+  "opening_details": {
+    "account_opened": true,
+    "active_within_30_days": "unknown",
+    "funded_within_7_days": "unknown",
+    "product_category": "SAVINGS"
+  },
+  "outcome": "OPENED",
+  "outcome_timestamp": "2026-08-18T14:25:57Z",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "return_trip_type": "ACCOUNT_OPENING_CONFIRMATION",
+  "session_id": "sess_2e4f6a8c0b2d4f6a"
+}

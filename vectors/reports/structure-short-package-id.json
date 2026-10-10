@@ -1,0 +1,15 @@
+{
+  "checks": [
+    {
+      "code": "malformed",
+      "detail": "package_id must be pkg_ followed by at least 128 bits of hex",
+      "id": "STRUCTURE",
+      "status": "FAIL"
+    }
+  ],
+  "outcome": "SESSION_TERMINATED",
+  "package_id": "pkg_1a3c5e7f",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals_present": [],
+  "signals_verified": []
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenticfinanceprotocol.org/schemas/v0.1/s5-composite.schema.json",
+  "title": "S5 composite score",
+  "description": "Signal 5 as carried in the package: only the composite score (§11.3: the receiving institution receives only the composite_score value), with the Environmental Consistency Layer outcome (§11.4), signed by the platform's S5 aggregation key. Provider identities and weights are not included. Reference proposal: AFSP v0.1 leaves this format to the Technical Working Group (§18); this schema documents the reference implementation's proposal and is not normative AFSP.",
+  "x-afsp-status": "reference-proposal",
+  "type": "object",
+  "properties": {
+    "score_type": {
+      "const": "COMPOSITE"
+    },
+    "session_correlation_id": {
+      "$ref": "common.schema.json#/$defs/session_id"
+    },
+    "composite_score": {
+      "$ref": "common.schema.json#/$defs/unit_interval"
+    },
+    "provider_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "signal_types_contributing": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/s5_signal_type"
+      }
+    },
+    "ecl": {
+      "type": "object",
+      "properties": {
+        "evaluated": {
+          "type": "boolean"
+        },
+        "step_up_required": {
+          "type": "boolean",
+          "description": "ECL requires mandatory HITL step-up (§11.4 Component 1)."
+        },
+        "geographic_risk_tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "§11.4 Component 3."
+        },
+        "out_of_band_required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evaluated",
+        "step_up_required"
+      ],
+      "description": "Environmental Consistency Layer outcome (§11.4)."
+    },
+    "computed_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "attestation": {
+      "$ref": "common.schema.json#/$defs/signature_block"
+    }
+  },
+  "required": [
+    "score_type",
+    "session_correlation_id",
+    "composite_score",
+    "provider_count",
+    "signal_types_contributing",
+    "ecl",
+    "computed_at",
+    "attestation"
+  ]
+}

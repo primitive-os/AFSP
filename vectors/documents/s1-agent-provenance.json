@@ -1,0 +1,21 @@
+{
+  "agent_id": "agt_aip_assistant_20260801_prod",
+  "attestation_type": "AFSP_AGENT_PROVENANCE",
+  "build_hash": "sha256:4c810230ff7189ac2d6f8d8727be1da15cbbfdb3eef357710d95e3c998dc5da0",
+  "issued_at": "2026-08-18T14:23:07Z",
+  "not_after": "2026-08-18T15:23:07Z",
+  "operator_id": "clo_ai_platform_001",
+  "registry_record": {
+    "certified_build_hashes": [
+      "sha256:4c810230ff7189ac2d6f8d8727be1da15cbbfdb3eef357710d95e3c998dc5da0"
+    ],
+    "certified_date": "2026-08-01T00:00:00Z",
+    "status": "CERTIFIED"
+  },
+  "registry_signature": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEUCIQCOFHxxICL+lnvk5+iRMtM4FK5hTeLpBoau3w81ENgu0QIgUUJsnvTbciUNDC1pMB5CDBY2a2afVdhHbnH3MpsL8/k=",
+    "signed_by": "agent-registry-2026-q3"
+  },
+  "version": "0.1"
+}

@@ -1,0 +1,332 @@
+{
+  "afsp_version": "0.1",
+  "assembly_timestamp": "2026-08-18T14:23:09Z",
+  "institution_nonce": "7e1c9a5f3b2d8e6a4c0f1b3d5e7a9c2e4f6b8d0a1c3e5f7a9b2d4f6e8a0c2b4d",
+  "nonce_bound_institution": "sgq5ekdnrP85evvMSgTSt5-gTTZroBd-_NBC7Uddpok",
+  "nonce_expiry": "2026-08-18T14:53:09Z",
+  "package_id": "pkg_1a3c5e7f9b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a1c3e5a7c9e1b3d5f7a9c1e3b",
+  "platform_signature": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEQCIBBlI99f4moL+rPMuyaFSttDZcotB1p2/pOzIWXm0rQoAiBjc/S7O9zZydyy9ZP58Aq2KBPgIVHPvmshl0tXvnCg9A==",
+    "signed_by": "platform.afsp.org"
+  },
+  "receiving_institution_id": "sunrise_digital_bank_afsp_001",
+  "session_id": "sess_2e4f6a8c0b2d4f6a",
+  "signals": {
+    "S1": {
+      "agent_id": "agt_aip_assistant_20260801_prod",
+      "attestation_type": "AFSP_AGENT_PROVENANCE",
+      "build_hash": "sha256:4c810230ff7189ac2d6f8d8727be1da15cbbfdb3eef357710d95e3c998dc5da0",
+      "issued_at": "2026-08-18T14:23:07Z",
+      "not_after": "2026-08-18T15:23:07Z",
+      "operator_id": "clo_ai_platform_001",
+      "registry_record": {
+        "certified_build_hashes": [
+          "sha256:4c810230ff7189ac2d6f8d8727be1da15cbbfdb3eef357710d95e3c998dc5da0"
+        ],
+        "certified_date": "2026-08-01T00:00:00Z",
+        "status": "CERTIFIED"
+      },
+      "registry_signature": {
+        "algorithm": "ECDSA-P256",
+        "signature": "MEUCIQCOFHxxICL+lnvk5+iRMtM4FK5hTeLpBoau3w81ENgu0QIgUUJsnvTbciUNDC1pMB5CDBY2a2afVdhHbnH3MpsL8/k=",
+        "signed_by": "agent-registry-2026-q3"
+      },
+      "version": "0.1"
+    },
+    "S2": {
+      "authorizations": [
+        {
+          "key_certificate": {
+            "authorization_tier": 1,
+            "cert_type": "AFSP_TIER_KEY_CERTIFICATE",
+            "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+            "eku": [
+              "READ",
+              "DISCOVER",
+              "PRESENT"
+            ],
+            "hardware_bound": true,
+            "issuer_institution_id": "harbor_federal_afsp_001",
+            "issuer_signature": {
+              "algorithm": "ECDSA-P256",
+              "signature": "MEUCIQCj7o8VzN12AlFxpXA//YqiK7Wf6uM613N52LmeZc1ffQIgFmkdl+XURTuDl+VUTYVudrDPtbVei+rw/GtUlbsTmtc=",
+              "signed_by": "harbor_federal_signing_key_2026"
+            },
+            "not_after": "2027-03-02T09:00:00Z",
+            "not_before": "2026-03-02T09:00:00Z",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "r0R47qQ8JFvS-CDNMktutqh3WosrRjB_-RwG83eEjD8",
+              "y": "eDk6LfmwuZ4s7xWbPYYmg4jlZmg7Qxlx3iho34eTX-4"
+            },
+            "root_key_thumbprint": "pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE",
+            "tee_attestation_verified": true,
+            "version": "0.1"
+          },
+          "token": {
+            "authorized_agent_id": "agt_aip_assistant_20260801_prod",
+            "biometric_event": {
+              "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+              "timestamp": "2026-08-18T14:23:07Z",
+              "type": "FIDO2_BIOMETRIC"
+            },
+            "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+            "receiving_institution_id": "NETWORK_MARKETPLACE",
+            "scope": {
+              "action_classes": [
+                "READ",
+                "DISCOVER",
+                "PRESENT"
+              ],
+              "consumer_preference_weights": {
+                "w_balance": 0.1,
+                "w_features": 0.1,
+                "w_fee": 0.3,
+                "w_rate": 0.5
+              },
+              "product_categories": [
+                "SAVINGS",
+                "MMA"
+              ]
+            },
+            "scope_expansion": {
+              "default_state": "EXISTING_RELATIONSHIPS_ONLY",
+              "expansion_requires": "BIOMETRIC_RECONFIRMATION",
+              "expansion_token_ttl_seconds": 3600
+            },
+            "signature": "MEUCIQCUv4f0mvkCwYbpC1IyyYYMh8ex3a3wNIwcxT32VqeIRgIgbShfpZfC9Caf/JvSUqhs5+LjTH5zEYI0ATB+N4FdQT0=",
+            "temporal_validity": {
+              "not_after": "2026-08-18T15:23:07Z",
+              "not_before": "2026-08-18T14:23:07Z"
+            },
+            "token_type": "AFSP_CONSUMER_AUTH",
+            "version": "0.1"
+          }
+        },
+        {
+          "key_certificate": {
+            "authorization_tier": 1,
+            "cert_type": "AFSP_TIER_KEY_CERTIFICATE",
+            "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+            "eku": [
+              "READ",
+              "DISCOVER",
+              "PRESENT"
+            ],
+            "hardware_bound": true,
+            "issuer_institution_id": "harbor_federal_afsp_001",
+            "issuer_signature": {
+              "algorithm": "ECDSA-P256",
+              "signature": "MEUCIQCj7o8VzN12AlFxpXA//YqiK7Wf6uM613N52LmeZc1ffQIgFmkdl+XURTuDl+VUTYVudrDPtbVei+rw/GtUlbsTmtc=",
+              "signed_by": "harbor_federal_signing_key_2026"
+            },
+            "not_after": "2027-03-02T09:00:00Z",
+            "not_before": "2026-03-02T09:00:00Z",
+            "public_key": {
+              "crv": "P-256",
+              "kty": "EC",
+              "x": "r0R47qQ8JFvS-CDNMktutqh3WosrRjB_-RwG83eEjD8",
+              "y": "eDk6LfmwuZ4s7xWbPYYmg4jlZmg7Qxlx3iho34eTX-4"
+            },
+            "root_key_thumbprint": "pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE",
+            "tee_attestation_verified": true,
+            "version": "0.1"
+          },
+          "token": {
+            "authorized_agent_id": "agt_aip_assistant_20260801_prod",
+            "biometric_event": {
+              "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+              "timestamp": "2026-08-18T14:24:13Z",
+              "type": "FIDO2_BIOMETRIC"
+            },
+            "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+            "receiving_institution_id": "sunrise_digital_bank_afsp_001",
+            "scope": {
+              "action_classes": [
+                "INITIATE"
+              ],
+              "product_categories": [
+                "SAVINGS"
+              ]
+            },
+            "servicing_intent_hash": "sha256:23594d3b3486668f792398a95d75ed1203d275e002066ad139432d69b52dcc29",
+            "signature": "MEQCIAC93MvbD+/Ydxz0xGx5nUb8p26mhhQrJn8X6pdlfOEyAiA3fRPmrHMMQc2JGSeiMW6CJZF78iH4z7YJmzD2b2kjeA==",
+            "temporal_validity": {
+              "not_after": "2026-08-18T14:54:13Z",
+              "not_before": "2026-08-18T14:24:13Z"
+            },
+            "token_type": "AFSP_CONSUMER_AUTH",
+            "version": "0.1"
+          }
+        }
+      ],
+      "scope_expansion_token": {
+        "authorization_token_hash": "sha256:c068af08f32c622a3d488553244444af4641cd0b1c66ca16496032c62bf13227",
+        "biometric_event": {
+          "tee_attestation": "eyJhbGciOiJFUzI1NiJ9.eyJhdHRlc3RhdGlvbiI6InRlc3QifQ.c2ln",
+          "timestamp": "2026-08-18T14:23:08Z",
+          "type": "FIDO2_BIOMETRIC"
+        },
+        "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+        "participation_state": "EXPANDED_SCOPE",
+        "session_id": "sess_2e4f6a8c0b2d4f6a",
+        "signature": "MEQCIClUkfmTdiu9q7cdaQq2hB9MP8S6WXYo4AEUYIdhEyF5AiAF8PIEa0JbasSzMtetcvDHygLfGyjxzq9BEiHNSnmkAg==",
+        "temporal_validity": {
+          "not_after": "2026-08-18T15:23:08Z",
+          "not_before": "2026-08-18T14:23:08Z"
+        },
+        "token_type": "AFSP_SCOPE_EXPANSION",
+        "version": "0.1"
+      },
+      "servicing_intent_package": {
+        "action_class": "INITIATE",
+        "action_type": "ACCOUNT_OPENING",
+        "afsp_version": "0.1",
+        "amount": null,
+        "authorization_tier": "Authorization Tier 2 (INITIATE)",
+        "currency": "USD",
+        "generated_from_structured_fields": true,
+        "ivc_confirmation_timestamp": "2026-08-18T14:24:12Z",
+        "ivc_confirmed": true,
+        "ivc_display_text": "Open a High-Yield Savings Account at Sunrise Digital Bank? APY 5.10%, no monthly fee, $100 minimum balance, FDIC-insured.",
+        "package_type": "SERVICING_INTENT_PACKAGE",
+        "product": "High-Yield Savings Account",
+        "product_terms": {
+          "apy": "5.10%",
+          "deposit_insurer": "FDIC",
+          "minimum_balance": "100.00",
+          "monthly_fee": "0.00"
+        },
+        "receiving_institution": "Sunrise Digital Bank",
+        "receiving_institution_id": "sunrise_digital_bank_afsp_001",
+        "session_id": "sess_2e4f6a8c0b2d4f6a",
+        "timing": "immediate"
+      }
+    },
+    "S3": {
+      "attestation_type": "AFSP_FEDERATED_REFERRAL",
+      "institution_signature": {
+        "algorithm": "ECDSA-P256",
+        "signature": "MEUCIQD1Ghd1rH7DdTjl7nu8Jo+dqqi2r0R/41O5eLpLIZ8+FAIgaIa6GTkpbLGmjxjupd7ncSnS1jv4XHA/5KM3s5oIKTA=",
+        "signed_by": "harbor_federal_signing_key_2026"
+      },
+      "issued_at": "2026-08-18T14:23:08Z",
+      "kyc": {
+        "program": "CIP_STANDARD",
+        "status": "VERIFIED",
+        "verified_on": "2026-02"
+      },
+      "not_after": "2026-08-18T15:23:08Z",
+      "referral_id": "ref_5d1e8a3c7b9f2e4a",
+      "referring_institution_id": "harbor_federal_afsp_001",
+      "relationship": {
+        "established_on": "2019-06",
+        "standing": "GOOD"
+      },
+      "session_id": "sess_2e4f6a8c0b2d4f6a",
+      "subject": {
+        "consumer_device_id": "dev_9f3a1c2e4b5d6f7a8b9c0d1e2f3a4b5c",
+        "root_key_thumbprint": "pRsqMiP5GSIJbvBfRJKpgfqiJDZ3eUD0TKhqLhddvhE"
+      },
+      "version": "0.1"
+    },
+    "S4": {
+      "anti_replay": {
+        "nonce": "a3f7c2e9b1d4f6a8c0e2b4d6f8a0c2e4",
+        "sequence_number": 847
+      },
+      "attestation_provider": "certified_s4_provider_001",
+      "attestation_version": "0.1",
+      "behavioral_consistency_score": {
+        "markers_evaluated": 5,
+        "score": 0.89
+      },
+      "inquiry_event_hash": "sha256:601759a21a1277a09d6551251e3e592f9e26b7a3a5df6b9f316eeaea1124b52d",
+      "privacy_parameters": {
+        "epsilon": 1.0,
+        "k_anonymity_k": 5,
+        "method": "DIFFERENTIAL_PRIVACY_LAPLACE"
+      },
+      "signals": {
+        "account_longevity": {
+          "confidence": 0.94,
+          "value": "MATURE"
+        },
+        "balance_range": {
+          "confidence": 0.88,
+          "value": "MID_HIGH"
+        },
+        "income_stability": {
+          "confidence": 0.93,
+          "frequency_component": 0.97,
+          "magnitude_component": 0.91,
+          "regularity_component": 0.95,
+          "value": "HIGHLY_CONSISTENT"
+        },
+        "product_eligibility": {
+          "categories_indicated": [
+            "SAVINGS",
+            "MMA"
+          ],
+          "confidence": 0.95,
+          "minimum_balance_compatible": true
+        },
+        "relationship_breadth": {
+          "confidence": 0.86,
+          "value": "MODERATE"
+        },
+        "transaction_regularity": {
+          "behavioral_category": "SAVER",
+          "confidence": 0.91,
+          "value": "HIGHLY_REGULAR"
+        }
+      },
+      "signature": {
+        "algorithm": "ECDSA-P256",
+        "signature": "MEQCIFWp2UxWEGY/JZNQT2mPMw0gZowuE+NoXFc8g9zNYGgkAiB0icNuvWs2T3coAT37HPvkdUyqH7MJx8nC8/HBB3RyUA==",
+        "signed_by": "s4-provider-001-2026"
+      },
+      "temporal_validity": {
+        "not_after": "2026-08-18T15:23:08Z",
+        "not_before": "2026-08-18T14:23:08Z"
+      }
+    },
+    "S5": {
+      "attestation": {
+        "algorithm": "ECDSA-P256",
+        "signature": "MEUCIQDjclYzDjM9YcwE0/aBKujP0ZFsngks2G4NDTZ+tl0JpAIgZcO4ZTpOyP/J/G0hho1yjSnqRi8tfLe3aSjAKLvE07Y=",
+        "signed_by": "platform-2026-q3"
+      },
+      "composite_score": 0.894,
+      "computed_at": "2026-08-18T14:23:09Z",
+      "ecl": {
+        "evaluated": true,
+        "geographic_risk_tier": 1,
+        "out_of_band_required": false,
+        "step_up_required": false
+      },
+      "provider_count": 2,
+      "score_type": "COMPOSITE",
+      "session_correlation_id": "sess_2e4f6a8c0b2d4f6a",
+      "signal_types_contributing": [
+        "TOUCH_PATTERNS",
+        "DEVICE_MOTION",
+        "NAVIGATION_TIMING",
+        "DEVICE_HARDWARE"
+      ]
+    }
+  },
+  "signals_present": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "validity_window": {
+    "not_after": "2026-08-18T15:23:09Z",
+    "not_before": "2026-08-18T14:23:09Z"
+  }
+}

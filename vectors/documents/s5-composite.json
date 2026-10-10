@@ -1,0 +1,24 @@
+{
+  "attestation": {
+    "algorithm": "ECDSA-P256",
+    "signature": "MEUCIQDjclYzDjM9YcwE0/aBKujP0ZFsngks2G4NDTZ+tl0JpAIgZcO4ZTpOyP/J/G0hho1yjSnqRi8tfLe3aSjAKLvE07Y=",
+    "signed_by": "platform-2026-q3"
+  },
+  "composite_score": 0.894,
+  "computed_at": "2026-08-18T14:23:09Z",
+  "ecl": {
+    "evaluated": true,
+    "geographic_risk_tier": 1,
+    "out_of_band_required": false,
+    "step_up_required": false
+  },
+  "provider_count": 2,
+  "score_type": "COMPOSITE",
+  "session_correlation_id": "sess_2e4f6a8c0b2d4f6a",
+  "signal_types_contributing": [
+    "TOUCH_PATTERNS",
+    "DEVICE_MOTION",
+    "NAVIGATION_TIMING",
+    "DEVICE_HARDWARE"
+  ]
+}
